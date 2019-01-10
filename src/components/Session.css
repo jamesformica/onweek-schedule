@@ -1,5 +1,9 @@
 .wrapper {
   display: flex;
+
+  &:last-child .info {
+    padding-bottom: 4rem;
+  }
 }
 
 .dot {

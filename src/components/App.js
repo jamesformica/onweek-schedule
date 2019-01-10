@@ -16,8 +16,6 @@ const App = () => (
     <Container>
       <Heading>Your schedule</Heading>
       {schedule.map(day => <Day key={day.day} day={day} />)}
-
-      <Heading>Enjoy</Heading>
     </Container>
     <Footer />
   </Fragment>

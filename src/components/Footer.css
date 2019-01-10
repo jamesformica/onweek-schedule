@@ -1,11 +1,23 @@
-.footer {
-  height: 14rem;
+.logoWrapper {
   color: white;
-  background: #333f48;
-  padding: 1.5rem;
-  margin-top: 8rem;
-  text-align: center;
+  background: linear-gradient(to top right, blueviolet, aquamarine);
+  padding: 4rem 1rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+}
+
+.logo {
+  height: 8rem;
+
+  @media (min-width: 40rem) {
+    height: 16rem;
+  }
+}
+
+.text {
+  display: inline-block;
+  margin-top: 2rem;
 }
