@@ -1,0 +1,210 @@
+[
+  {
+    "day": "2019-02-11",
+    "sessions": [
+      {
+        "start": "09:00",
+        "end": "10:00",
+        "title": "Coffee & chill",
+        "hostedBy": "yourselves",
+        "location": "Uni Hall",
+        "moreInfo": "Kick back, relax, grab some coffee and pretend not to be super excited about all the things you're gonna learn today! 👌"
+      },
+      {
+        "start": "10:00",
+        "end": "12:00",
+        "title": "O(n)Week retro & program overview",
+        "hostedBy": "Sir Greg of REA",
+        "location": "Uni Hall",
+        "moreInfo": "Get ready for your first solo retro! Be gentle, Greg has feelings ya know..."
+      },
+      {
+        "start": "12:00",
+        "end": "13:30",
+        "title": "Lunch",
+        "hostedBy": "mentor",
+        "location": "outside",
+        "moreInfo": "Time to vent to your mentor about Greg's talk, but be careful, Greg has spies all around Richmond!"
+      },
+      {
+        "start": "13:30",
+        "end": "15:00",
+        "title": "Intro to REA and our LOBs",
+        "hostedBy": "Greg and Kate",
+        "location": "Uni Hall",
+        "moreInfo": "Did you know REA is made up of different teams?!?! That's right! More specifically, at least 4 teams... I think."
+      }
+    ]
+  },
+  {
+    "day": "2019-02-12",
+    "sessions": [
+      {
+        "start": "09:00",
+        "end": "10:30",
+        "title": "Intro to engineering",
+        "hostedBy": "Steve Truong",
+        "location": "Hamer Hall",
+        "moreInfo": "There's nothing better than kicking off the day with a session on super high tech stuff and there is no one more qualified than Steve to deliver this session. Don't let his big muscles 💪 and nickname (Super Tank) alarm you, he is the sweetest guy in all of REA."
+      },
+      {
+        "start": "10:30",
+        "end": "10:45",
+        "title": "Morning tea / snacks",
+        "hostedBy": "each other",
+        "moreInfo": "Snackssssssssss! How many can you eat in 15 minutes?"
+      },
+      {
+        "start": "10:45",
+        "end": "12:00",
+        "title": "Intro to systems",
+        "hostedBy": "Joh",
+        "location": "Hamer Hall",
+        "moreInfo": "You've heard all about engineerings, now it's time turn up the dial and learn about all the systems at REA, what's the difference? You're about to find out! And hopefully so am I..."
+      },
+      {
+        "start": "12:00",
+        "end": "13:30",
+        "title": "Lunch",
+        "hostedBy": "Grad cohort and buddies",
+        "location": "somewhere",
+        "moreInfo": "Did someone say lunch? 🌭🌯🍪🍩🍟🍔🍕🥓🍖🥐"
+      },
+      {
+        "start": "13:30",
+        "end": "14:30",
+        "title": "Compliance training",
+        "hostedBy": "Greg",
+        "location": "Hamer Hall",
+        "moreInfo": "This is ummm going to ummm be ummm really really fun! Yep!"
+      },
+      {
+        "start": "14:30",
+        "end": "15:30",
+        "title": "Coffee & first 1:1",
+        "hostedBy": "your Rotation Lead",
+        "moreInfo": "Thank goodness that compliance training is over! Now, go catch up with your rotation lead and have your very first one on one. Don't worry, it's not as scary as it sounds! Or is it..?"
+      },
+      {
+        "start": "14:30",
+        "end": "15:30",
+        "title": "Compliance training, again",
+        "location": "Hamer Hall",
+        "moreInfo": "Oh no, not again."
+      }
+    ]
+  },
+  {
+    "day": "2019-02-13",
+    "sessions": [
+      {
+        "start": "09:00",
+        "end": "10:30",
+        "title": "Pairing at REA (devs only)",
+        "hostedBy": "Alyssa / Milly",
+        "location": "Hamer Hall",
+        "moreInfo": "Working together is one of the most important aspects of working at REA! Pairing together on a card is a fantastic way to get up to speed and also share knowledge across the team! We are all about pairing 🍐"
+      },
+      {
+        "start": "10:30",
+        "end": "12:00",
+        "title": "Morning tea / snacks / free time",
+        "moreInfo": "More snackssssss, remember to say thanks to Greg for persuading REA to give him budget for snackssss."
+      },
+      {
+        "start": "12:00",
+        "end": "13:00",
+        "title": "Lunch",
+        "hostedBy": "Rotation Lead and team",
+        "location": "outside again",
+        "moreInfo": "We think it's about time you got to know your first rotation team. Follow your rotation lead and they will introduce you to the wonderful people you will be working with for the next 6 months 😁"
+      },
+      {
+        "start": "13:00",
+        "end": "15:00",
+        "title": "Resilience / Self Development",
+        "hostedBy": "Breana",
+        "location": "Concert Hall",
+        "moreInfo": "James, don't forget to write about this. Good work!"
+      }
+    ]
+  },
+  {
+    "day": "2019-02-14",
+    "sessions": [
+      {
+        "start": "09:00",
+        "end": "10:00",
+        "title": "Intro to being a mentee",
+        "hostedBy": "Kate and Stefan",
+        "location": "The Provincial",
+        "moreInfo": "You're mentors want the create the best possible experience for you here at REA, and this session will teach you how to exploit their kindness and generosity so you can have the best rotations ever! No, not really, but there is some really useful information in this sessions for you."
+      },
+      {
+        "start": "10:00",
+        "end": "10:15",
+        "title": "Morning tea / snacks",
+        "moreInfo": "What do we want? MORE SNACKS! When do we want them? NOW!."
+      },
+      {
+        "start": "12:00",
+        "end": "13:30",
+        "title": "Lunch",
+        "hostedBy": "6.0 cohort",
+        "location": "maybe the park?",
+        "moreInfo": "BYO lunch this time! Maybe bring some giant jenga along with you and have a chill out session with your 6.0 family."
+      },
+      {
+        "start": "13:30",
+        "end": "14:00",
+        "title": "Things I have learnt as an adult",
+        "hostedBy": "Kate",
+        "location": "The Provincial",
+        "moreInfo": "Here is a little known secret that all adults try their best to cover up: No one knows what they are doing and we are all making it up as we go along 🤯. Being an adult is sometimes hard, luckly we have Kate here to provide some lessons and advice."
+      },
+      {
+        "start": "14:00",
+        "end": "15:00",
+        "title": "System set up",
+        "hostedBy": "your 5.0 buddy",
+        "location": "The Provincial",
+        "moreInfo": "Woo we get to play with our computers now! Let your 5.0 buddy show you the ropes and help get your system set up and ready to smash out some work."
+      }
+    ]
+  },
+  {
+    "day": "2019-02-15",
+    "sessions": [
+      {
+        "start": "09:00",
+        "end": "10:00",
+        "title": "Intro to strategy",
+        "hostedBy": "Peter Li",
+        "location": "Concert Hall",
+        "moreInfo": "Do you like chess? ♟ Sometimes a business is just like chess! You need to plan 5 moves ahead and think about what your opposition is trying to do to get ahead of you! That's where strategy comes in. Sit back and stay sharp cause you gon' learn a lot in this one."
+      },
+      {
+        "start": "10:00",
+        "end": "11:00",
+        "title": "Morning tea / snacks",
+        "moreInfo": "What? A whole hour for snacks?!?! 🥰 I think I'm in love."
+      },
+      {
+        "start": "11:00",
+        "end": "12:00",
+        "title": "Benefits bingo",
+        "hostedBy": "Caleb",
+        "location": "Concert Hall",
+        "moreInfo": "Did you know there are other benefits than being paid once a month at REA? It's true! Enjoy this gameshow style session where you'll learn about all the perks offered to you as an employee."
+      },
+      {
+        "start": "12:00",
+        "end": "15:00",
+        "title": "Lunch and [top secret]",
+        "hostedBy": "Mentors",
+        "location": "Unknown",
+        "moreInfo": "Enjoy some lunch with your mentors, then embark on️ a top secret journey that has probably already been spoiled for you cause people are sometimes like that and don't like to let other people have any fun. 🤬"
+      },
+    ]
+  }
+]

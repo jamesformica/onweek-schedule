@@ -1,0 +1,32 @@
+.date {
+  color: #e4002b;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.title {
+  width: 100%;
+  background: transparent;
+  padding-top: 1rem;
+  padding-left: 0.75rem;
+  padding-bottom: 1rem;
+  border: 0;
+  border-bottom: 3px solid #f0f2f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+}
+
+.opened {
+  width: 1.75rem;
+  transition: 0.6s;
+  transform: rotate(-90deg);
+}
+
+.closed {
+  composes: opened;
+  transform: rotate(90deg);
+}

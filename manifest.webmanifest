@@ -1,0 +1,15 @@
+{
+  "short_name": "O(n)Week+",
+  "name": "O(n)Week+ Schedule",
+  "icons": [
+    {
+      "src": "src/images/favicon.icon",
+      "type": "icon",
+      "sizes": "32/32"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#e4002b",
+  "display": "standalone",
+  "theme_color": "#e4002b"
+}
