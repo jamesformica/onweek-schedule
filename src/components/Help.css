@@ -2,7 +2,6 @@
   color: #333f48;
   background: #f7f8f9;
   padding-bottom: 2rem;
-  margin-bottom: 2rem;
 }
 
 .title {
@@ -26,6 +25,12 @@
   object-fit: cover;
   border-radius: 50%;
   filter: grayscale(1);
+  transition: 1s;
+
+  &:hover {
+    filter: grayscale(0) saturate(2);
+    transform: rotate(360deg) scale(2);
+  }
 }
 
 .name {

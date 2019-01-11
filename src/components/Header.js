@@ -11,7 +11,9 @@ const backgroundStyles = {
 }
 
 const Header = () => (
-  <div style={backgroundStyles} className={styles.header}>
+  <div className={styles.header}>
+    <div className={styles.bg} style={backgroundStyles} />
+
     <Container style={{ paddingTop: '2rem', height: '100%' }}>
       <img
         alt="rea"

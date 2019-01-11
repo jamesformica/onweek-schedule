@@ -3,12 +3,17 @@
   "name": "O(n)Week+ Schedule",
   "icons": [
     {
-      "src": "src/images/favicon.icon",
-      "type": "icon",
-      "sizes": "32/32"
+      "src": "/src/images/grad-icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/src/images/grad-icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
-  "start_url": "/",
+  "start_url": "/onweek-schedule",
   "background_color": "#e4002b",
   "display": "standalone",
   "theme_color": "#e4002b"

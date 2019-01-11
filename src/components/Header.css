@@ -1,9 +1,19 @@
 .header {
   height: 60vh;
   min-height: 560px;
-  max-height: 760px;
+}
+
+.bg {
+  composes: header;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background-size: cover;
   background-position: 50% 20%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  z-index: -1;
 }
 
 .rea {
