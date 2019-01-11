@@ -30878,7 +30878,972 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"node_modules/lodash/_baseRandom.js":[function(require,module,exports) {
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeFloor = Math.floor,
+    nativeRandom = Math.random;
+
+/**
+ * The base implementation of `_.random` without support for returning
+ * floating-point numbers.
+ *
+ * @private
+ * @param {number} lower The lower bound.
+ * @param {number} upper The upper bound.
+ * @returns {number} Returns the random number.
+ */
+function baseRandom(lower, upper) {
+  return lower + nativeFloor(nativeRandom() * (upper - lower + 1));
+}
+
+module.exports = baseRandom;
+
+},{}],"node_modules/lodash/_arraySample.js":[function(require,module,exports) {
+var baseRandom = require('./_baseRandom');
+
+/**
+ * A specialized version of `_.sample` for arrays.
+ *
+ * @private
+ * @param {Array} array The array to sample.
+ * @returns {*} Returns the random element.
+ */
+function arraySample(array) {
+  var length = array.length;
+  return length ? array[baseRandom(0, length - 1)] : undefined;
+}
+
+module.exports = arraySample;
+
+},{"./_baseRandom":"node_modules/lodash/_baseRandom.js"}],"node_modules/lodash/_arrayMap.js":[function(require,module,exports) {
+/**
+ * A specialized version of `_.map` for arrays without support for iteratee
+ * shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns the new mapped array.
+ */
+function arrayMap(array, iteratee) {
+  var index = -1,
+      length = array == null ? 0 : array.length,
+      result = Array(length);
+
+  while (++index < length) {
+    result[index] = iteratee(array[index], index, array);
+  }
+  return result;
+}
+
+module.exports = arrayMap;
+
+},{}],"node_modules/lodash/_baseValues.js":[function(require,module,exports) {
+var arrayMap = require('./_arrayMap');
+
+/**
+ * The base implementation of `_.values` and `_.valuesIn` which creates an
+ * array of `object` property values corresponding to the property names
+ * of `props`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {Array} props The property names to get values for.
+ * @returns {Object} Returns the array of property values.
+ */
+function baseValues(object, props) {
+  return arrayMap(props, function(key) {
+    return object[key];
+  });
+}
+
+module.exports = baseValues;
+
+},{"./_arrayMap":"node_modules/lodash/_arrayMap.js"}],"node_modules/lodash/_baseTimes.js":[function(require,module,exports) {
+/**
+ * The base implementation of `_.times` without support for iteratee shorthands
+ * or max array length checks.
+ *
+ * @private
+ * @param {number} n The number of times to invoke `iteratee`.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns the array of results.
+ */
+function baseTimes(n, iteratee) {
+  var index = -1,
+      result = Array(n);
+
+  while (++index < n) {
+    result[index] = iteratee(index);
+  }
+  return result;
+}
+
+module.exports = baseTimes;
+
+},{}],"node_modules/lodash/_freeGlobal.js":[function(require,module,exports) {
+var global = arguments[3];
+/** Detect free variable `global` from Node.js. */
+var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+
+module.exports = freeGlobal;
+
+},{}],"node_modules/lodash/_root.js":[function(require,module,exports) {
+var freeGlobal = require('./_freeGlobal');
+
+/** Detect free variable `self`. */
+var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+/** Used as a reference to the global object. */
+var root = freeGlobal || freeSelf || Function('return this')();
+
+module.exports = root;
+
+},{"./_freeGlobal":"node_modules/lodash/_freeGlobal.js"}],"node_modules/lodash/_Symbol.js":[function(require,module,exports) {
+var root = require('./_root');
+
+/** Built-in value references. */
+var Symbol = root.Symbol;
+
+module.exports = Symbol;
+
+},{"./_root":"node_modules/lodash/_root.js"}],"node_modules/lodash/_getRawTag.js":[function(require,module,exports) {
+var Symbol = require('./_Symbol');
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var nativeObjectToString = objectProto.toString;
+
+/** Built-in value references. */
+var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+
+/**
+ * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the raw `toStringTag`.
+ */
+function getRawTag(value) {
+  var isOwn = hasOwnProperty.call(value, symToStringTag),
+      tag = value[symToStringTag];
+
+  try {
+    value[symToStringTag] = undefined;
+    var unmasked = true;
+  } catch (e) {}
+
+  var result = nativeObjectToString.call(value);
+  if (unmasked) {
+    if (isOwn) {
+      value[symToStringTag] = tag;
+    } else {
+      delete value[symToStringTag];
+    }
+  }
+  return result;
+}
+
+module.exports = getRawTag;
+
+},{"./_Symbol":"node_modules/lodash/_Symbol.js"}],"node_modules/lodash/_objectToString.js":[function(require,module,exports) {
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var nativeObjectToString = objectProto.toString;
+
+/**
+ * Converts `value` to a string using `Object.prototype.toString`.
+ *
+ * @private
+ * @param {*} value The value to convert.
+ * @returns {string} Returns the converted string.
+ */
+function objectToString(value) {
+  return nativeObjectToString.call(value);
+}
+
+module.exports = objectToString;
+
+},{}],"node_modules/lodash/_baseGetTag.js":[function(require,module,exports) {
+var Symbol = require('./_Symbol'),
+    getRawTag = require('./_getRawTag'),
+    objectToString = require('./_objectToString');
+
+/** `Object#toString` result references. */
+var nullTag = '[object Null]',
+    undefinedTag = '[object Undefined]';
+
+/** Built-in value references. */
+var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+
+/**
+ * The base implementation of `getTag` without fallbacks for buggy environments.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the `toStringTag`.
+ */
+function baseGetTag(value) {
+  if (value == null) {
+    return value === undefined ? undefinedTag : nullTag;
+  }
+  return (symToStringTag && symToStringTag in Object(value))
+    ? getRawTag(value)
+    : objectToString(value);
+}
+
+module.exports = baseGetTag;
+
+},{"./_Symbol":"node_modules/lodash/_Symbol.js","./_getRawTag":"node_modules/lodash/_getRawTag.js","./_objectToString":"node_modules/lodash/_objectToString.js"}],"node_modules/lodash/isObjectLike.js":[function(require,module,exports) {
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */
+function isObjectLike(value) {
+  return value != null && typeof value == 'object';
+}
+
+module.exports = isObjectLike;
+
+},{}],"node_modules/lodash/_baseIsArguments.js":[function(require,module,exports) {
+var baseGetTag = require('./_baseGetTag'),
+    isObjectLike = require('./isObjectLike');
+
+/** `Object#toString` result references. */
+var argsTag = '[object Arguments]';
+
+/**
+ * The base implementation of `_.isArguments`.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an `arguments` object,
+ */
+function baseIsArguments(value) {
+  return isObjectLike(value) && baseGetTag(value) == argsTag;
+}
+
+module.exports = baseIsArguments;
+
+},{"./_baseGetTag":"node_modules/lodash/_baseGetTag.js","./isObjectLike":"node_modules/lodash/isObjectLike.js"}],"node_modules/lodash/isArguments.js":[function(require,module,exports) {
+var baseIsArguments = require('./_baseIsArguments'),
+    isObjectLike = require('./isObjectLike');
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/** Built-in value references. */
+var propertyIsEnumerable = objectProto.propertyIsEnumerable;
+
+/**
+ * Checks if `value` is likely an `arguments` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an `arguments` object,
+ *  else `false`.
+ * @example
+ *
+ * _.isArguments(function() { return arguments; }());
+ * // => true
+ *
+ * _.isArguments([1, 2, 3]);
+ * // => false
+ */
+var isArguments = baseIsArguments(function() { return arguments; }()) ? baseIsArguments : function(value) {
+  return isObjectLike(value) && hasOwnProperty.call(value, 'callee') &&
+    !propertyIsEnumerable.call(value, 'callee');
+};
+
+module.exports = isArguments;
+
+},{"./_baseIsArguments":"node_modules/lodash/_baseIsArguments.js","./isObjectLike":"node_modules/lodash/isObjectLike.js"}],"node_modules/lodash/isArray.js":[function(require,module,exports) {
+/**
+ * Checks if `value` is classified as an `Array` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an array, else `false`.
+ * @example
+ *
+ * _.isArray([1, 2, 3]);
+ * // => true
+ *
+ * _.isArray(document.body.children);
+ * // => false
+ *
+ * _.isArray('abc');
+ * // => false
+ *
+ * _.isArray(_.noop);
+ * // => false
+ */
+var isArray = Array.isArray;
+
+module.exports = isArray;
+
+},{}],"node_modules/lodash/stubFalse.js":[function(require,module,exports) {
+/**
+ * This method returns `false`.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.13.0
+ * @category Util
+ * @returns {boolean} Returns `false`.
+ * @example
+ *
+ * _.times(2, _.stubFalse);
+ * // => [false, false]
+ */
+function stubFalse() {
+  return false;
+}
+
+module.exports = stubFalse;
+
+},{}],"node_modules/lodash/isBuffer.js":[function(require,module,exports) {
+
+var root = require('./_root'),
+    stubFalse = require('./stubFalse');
+
+/** Detect free variable `exports`. */
+var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
+
+/** Detect free variable `module`. */
+var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
+
+/** Detect the popular CommonJS extension `module.exports`. */
+var moduleExports = freeModule && freeModule.exports === freeExports;
+
+/** Built-in value references. */
+var Buffer = moduleExports ? root.Buffer : undefined;
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeIsBuffer = Buffer ? Buffer.isBuffer : undefined;
+
+/**
+ * Checks if `value` is a buffer.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.3.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a buffer, else `false`.
+ * @example
+ *
+ * _.isBuffer(new Buffer(2));
+ * // => true
+ *
+ * _.isBuffer(new Uint8Array(2));
+ * // => false
+ */
+var isBuffer = nativeIsBuffer || stubFalse;
+
+module.exports = isBuffer;
+
+},{"./_root":"node_modules/lodash/_root.js","./stubFalse":"node_modules/lodash/stubFalse.js"}],"node_modules/lodash/_isIndex.js":[function(require,module,exports) {
+/** Used as references for various `Number` constants. */
+var MAX_SAFE_INTEGER = 9007199254740991;
+
+/** Used to detect unsigned integer values. */
+var reIsUint = /^(?:0|[1-9]\d*)$/;
+
+/**
+ * Checks if `value` is a valid array-like index.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
+ * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
+ */
+function isIndex(value, length) {
+  var type = typeof value;
+  length = length == null ? MAX_SAFE_INTEGER : length;
+
+  return !!length &&
+    (type == 'number' ||
+      (type != 'symbol' && reIsUint.test(value))) &&
+        (value > -1 && value % 1 == 0 && value < length);
+}
+
+module.exports = isIndex;
+
+},{}],"node_modules/lodash/isLength.js":[function(require,module,exports) {
+/** Used as references for various `Number` constants. */
+var MAX_SAFE_INTEGER = 9007199254740991;
+
+/**
+ * Checks if `value` is a valid array-like length.
+ *
+ * **Note:** This method is loosely based on
+ * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
+ * @example
+ *
+ * _.isLength(3);
+ * // => true
+ *
+ * _.isLength(Number.MIN_VALUE);
+ * // => false
+ *
+ * _.isLength(Infinity);
+ * // => false
+ *
+ * _.isLength('3');
+ * // => false
+ */
+function isLength(value) {
+  return typeof value == 'number' &&
+    value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
+}
+
+module.exports = isLength;
+
+},{}],"node_modules/lodash/_baseIsTypedArray.js":[function(require,module,exports) {
+var baseGetTag = require('./_baseGetTag'),
+    isLength = require('./isLength'),
+    isObjectLike = require('./isObjectLike');
+
+/** `Object#toString` result references. */
+var argsTag = '[object Arguments]',
+    arrayTag = '[object Array]',
+    boolTag = '[object Boolean]',
+    dateTag = '[object Date]',
+    errorTag = '[object Error]',
+    funcTag = '[object Function]',
+    mapTag = '[object Map]',
+    numberTag = '[object Number]',
+    objectTag = '[object Object]',
+    regexpTag = '[object RegExp]',
+    setTag = '[object Set]',
+    stringTag = '[object String]',
+    weakMapTag = '[object WeakMap]';
+
+var arrayBufferTag = '[object ArrayBuffer]',
+    dataViewTag = '[object DataView]',
+    float32Tag = '[object Float32Array]',
+    float64Tag = '[object Float64Array]',
+    int8Tag = '[object Int8Array]',
+    int16Tag = '[object Int16Array]',
+    int32Tag = '[object Int32Array]',
+    uint8Tag = '[object Uint8Array]',
+    uint8ClampedTag = '[object Uint8ClampedArray]',
+    uint16Tag = '[object Uint16Array]',
+    uint32Tag = '[object Uint32Array]';
+
+/** Used to identify `toStringTag` values of typed arrays. */
+var typedArrayTags = {};
+typedArrayTags[float32Tag] = typedArrayTags[float64Tag] =
+typedArrayTags[int8Tag] = typedArrayTags[int16Tag] =
+typedArrayTags[int32Tag] = typedArrayTags[uint8Tag] =
+typedArrayTags[uint8ClampedTag] = typedArrayTags[uint16Tag] =
+typedArrayTags[uint32Tag] = true;
+typedArrayTags[argsTag] = typedArrayTags[arrayTag] =
+typedArrayTags[arrayBufferTag] = typedArrayTags[boolTag] =
+typedArrayTags[dataViewTag] = typedArrayTags[dateTag] =
+typedArrayTags[errorTag] = typedArrayTags[funcTag] =
+typedArrayTags[mapTag] = typedArrayTags[numberTag] =
+typedArrayTags[objectTag] = typedArrayTags[regexpTag] =
+typedArrayTags[setTag] = typedArrayTags[stringTag] =
+typedArrayTags[weakMapTag] = false;
+
+/**
+ * The base implementation of `_.isTypedArray` without Node.js optimizations.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
+ */
+function baseIsTypedArray(value) {
+  return isObjectLike(value) &&
+    isLength(value.length) && !!typedArrayTags[baseGetTag(value)];
+}
+
+module.exports = baseIsTypedArray;
+
+},{"./_baseGetTag":"node_modules/lodash/_baseGetTag.js","./isLength":"node_modules/lodash/isLength.js","./isObjectLike":"node_modules/lodash/isObjectLike.js"}],"node_modules/lodash/_baseUnary.js":[function(require,module,exports) {
+/**
+ * The base implementation of `_.unary` without support for storing metadata.
+ *
+ * @private
+ * @param {Function} func The function to cap arguments for.
+ * @returns {Function} Returns the new capped function.
+ */
+function baseUnary(func) {
+  return function(value) {
+    return func(value);
+  };
+}
+
+module.exports = baseUnary;
+
+},{}],"node_modules/lodash/_nodeUtil.js":[function(require,module,exports) {
+var freeGlobal = require('./_freeGlobal');
+
+/** Detect free variable `exports`. */
+var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
+
+/** Detect free variable `module`. */
+var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
+
+/** Detect the popular CommonJS extension `module.exports`. */
+var moduleExports = freeModule && freeModule.exports === freeExports;
+
+/** Detect free variable `process` from Node.js. */
+var freeProcess = moduleExports && freeGlobal.process;
+
+/** Used to access faster Node.js helpers. */
+var nodeUtil = (function() {
+  try {
+    // Use `util.types` for Node.js 10+.
+    var types = freeModule && freeModule.require && freeModule.require('util').types;
+
+    if (types) {
+      return types;
+    }
+
+    // Legacy `process.binding('util')` for Node.js < 10.
+    return freeProcess && freeProcess.binding && freeProcess.binding('util');
+  } catch (e) {}
+}());
+
+module.exports = nodeUtil;
+
+},{"./_freeGlobal":"node_modules/lodash/_freeGlobal.js"}],"node_modules/lodash/isTypedArray.js":[function(require,module,exports) {
+var baseIsTypedArray = require('./_baseIsTypedArray'),
+    baseUnary = require('./_baseUnary'),
+    nodeUtil = require('./_nodeUtil');
+
+/* Node.js helper references. */
+var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
+
+/**
+ * Checks if `value` is classified as a typed array.
+ *
+ * @static
+ * @memberOf _
+ * @since 3.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
+ * @example
+ *
+ * _.isTypedArray(new Uint8Array);
+ * // => true
+ *
+ * _.isTypedArray([]);
+ * // => false
+ */
+var isTypedArray = nodeIsTypedArray ? baseUnary(nodeIsTypedArray) : baseIsTypedArray;
+
+module.exports = isTypedArray;
+
+},{"./_baseIsTypedArray":"node_modules/lodash/_baseIsTypedArray.js","./_baseUnary":"node_modules/lodash/_baseUnary.js","./_nodeUtil":"node_modules/lodash/_nodeUtil.js"}],"node_modules/lodash/_arrayLikeKeys.js":[function(require,module,exports) {
+var baseTimes = require('./_baseTimes'),
+    isArguments = require('./isArguments'),
+    isArray = require('./isArray'),
+    isBuffer = require('./isBuffer'),
+    isIndex = require('./_isIndex'),
+    isTypedArray = require('./isTypedArray');
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Creates an array of the enumerable property names of the array-like `value`.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @param {boolean} inherited Specify returning inherited property names.
+ * @returns {Array} Returns the array of property names.
+ */
+function arrayLikeKeys(value, inherited) {
+  var isArr = isArray(value),
+      isArg = !isArr && isArguments(value),
+      isBuff = !isArr && !isArg && isBuffer(value),
+      isType = !isArr && !isArg && !isBuff && isTypedArray(value),
+      skipIndexes = isArr || isArg || isBuff || isType,
+      result = skipIndexes ? baseTimes(value.length, String) : [],
+      length = result.length;
+
+  for (var key in value) {
+    if ((inherited || hasOwnProperty.call(value, key)) &&
+        !(skipIndexes && (
+           // Safari 9 has enumerable `arguments.length` in strict mode.
+           key == 'length' ||
+           // Node.js 0.10 has enumerable non-index properties on buffers.
+           (isBuff && (key == 'offset' || key == 'parent')) ||
+           // PhantomJS 2 has enumerable non-index properties on typed arrays.
+           (isType && (key == 'buffer' || key == 'byteLength' || key == 'byteOffset')) ||
+           // Skip index properties.
+           isIndex(key, length)
+        ))) {
+      result.push(key);
+    }
+  }
+  return result;
+}
+
+module.exports = arrayLikeKeys;
+
+},{"./_baseTimes":"node_modules/lodash/_baseTimes.js","./isArguments":"node_modules/lodash/isArguments.js","./isArray":"node_modules/lodash/isArray.js","./isBuffer":"node_modules/lodash/isBuffer.js","./_isIndex":"node_modules/lodash/_isIndex.js","./isTypedArray":"node_modules/lodash/isTypedArray.js"}],"node_modules/lodash/_isPrototype.js":[function(require,module,exports) {
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Checks if `value` is likely a prototype object.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a prototype, else `false`.
+ */
+function isPrototype(value) {
+  var Ctor = value && value.constructor,
+      proto = (typeof Ctor == 'function' && Ctor.prototype) || objectProto;
+
+  return value === proto;
+}
+
+module.exports = isPrototype;
+
+},{}],"node_modules/lodash/_overArg.js":[function(require,module,exports) {
+/**
+ * Creates a unary function that invokes `func` with its argument transformed.
+ *
+ * @private
+ * @param {Function} func The function to wrap.
+ * @param {Function} transform The argument transform.
+ * @returns {Function} Returns the new function.
+ */
+function overArg(func, transform) {
+  return function(arg) {
+    return func(transform(arg));
+  };
+}
+
+module.exports = overArg;
+
+},{}],"node_modules/lodash/_nativeKeys.js":[function(require,module,exports) {
+var overArg = require('./_overArg');
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeKeys = overArg(Object.keys, Object);
+
+module.exports = nativeKeys;
+
+},{"./_overArg":"node_modules/lodash/_overArg.js"}],"node_modules/lodash/_baseKeys.js":[function(require,module,exports) {
+var isPrototype = require('./_isPrototype'),
+    nativeKeys = require('./_nativeKeys');
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * The base implementation of `_.keys` which doesn't treat sparse arrays as dense.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ */
+function baseKeys(object) {
+  if (!isPrototype(object)) {
+    return nativeKeys(object);
+  }
+  var result = [];
+  for (var key in Object(object)) {
+    if (hasOwnProperty.call(object, key) && key != 'constructor') {
+      result.push(key);
+    }
+  }
+  return result;
+}
+
+module.exports = baseKeys;
+
+},{"./_isPrototype":"node_modules/lodash/_isPrototype.js","./_nativeKeys":"node_modules/lodash/_nativeKeys.js"}],"node_modules/lodash/isObject.js":[function(require,module,exports) {
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+function isObject(value) {
+  var type = typeof value;
+  return value != null && (type == 'object' || type == 'function');
+}
+
+module.exports = isObject;
+
+},{}],"node_modules/lodash/isFunction.js":[function(require,module,exports) {
+var baseGetTag = require('./_baseGetTag'),
+    isObject = require('./isObject');
+
+/** `Object#toString` result references. */
+var asyncTag = '[object AsyncFunction]',
+    funcTag = '[object Function]',
+    genTag = '[object GeneratorFunction]',
+    proxyTag = '[object Proxy]';
+
+/**
+ * Checks if `value` is classified as a `Function` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a function, else `false`.
+ * @example
+ *
+ * _.isFunction(_);
+ * // => true
+ *
+ * _.isFunction(/abc/);
+ * // => false
+ */
+function isFunction(value) {
+  if (!isObject(value)) {
+    return false;
+  }
+  // The use of `Object#toString` avoids issues with the `typeof` operator
+  // in Safari 9 which returns 'object' for typed arrays and other constructors.
+  var tag = baseGetTag(value);
+  return tag == funcTag || tag == genTag || tag == asyncTag || tag == proxyTag;
+}
+
+module.exports = isFunction;
+
+},{"./_baseGetTag":"node_modules/lodash/_baseGetTag.js","./isObject":"node_modules/lodash/isObject.js"}],"node_modules/lodash/isArrayLike.js":[function(require,module,exports) {
+var isFunction = require('./isFunction'),
+    isLength = require('./isLength');
+
+/**
+ * Checks if `value` is array-like. A value is considered array-like if it's
+ * not a function and has a `value.length` that's an integer greater than or
+ * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+ * @example
+ *
+ * _.isArrayLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isArrayLike(document.body.children);
+ * // => true
+ *
+ * _.isArrayLike('abc');
+ * // => true
+ *
+ * _.isArrayLike(_.noop);
+ * // => false
+ */
+function isArrayLike(value) {
+  return value != null && isLength(value.length) && !isFunction(value);
+}
+
+module.exports = isArrayLike;
+
+},{"./isFunction":"node_modules/lodash/isFunction.js","./isLength":"node_modules/lodash/isLength.js"}],"node_modules/lodash/keys.js":[function(require,module,exports) {
+var arrayLikeKeys = require('./_arrayLikeKeys'),
+    baseKeys = require('./_baseKeys'),
+    isArrayLike = require('./isArrayLike');
+
+/**
+ * Creates an array of the own enumerable property names of `object`.
+ *
+ * **Note:** Non-object values are coerced to objects. See the
+ * [ES spec](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
+ * for more details.
+ *
+ * @static
+ * @since 0.1.0
+ * @memberOf _
+ * @category Object
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ * @example
+ *
+ * function Foo() {
+ *   this.a = 1;
+ *   this.b = 2;
+ * }
+ *
+ * Foo.prototype.c = 3;
+ *
+ * _.keys(new Foo);
+ * // => ['a', 'b'] (iteration order is not guaranteed)
+ *
+ * _.keys('hi');
+ * // => ['0', '1']
+ */
+function keys(object) {
+  return isArrayLike(object) ? arrayLikeKeys(object) : baseKeys(object);
+}
+
+module.exports = keys;
+
+},{"./_arrayLikeKeys":"node_modules/lodash/_arrayLikeKeys.js","./_baseKeys":"node_modules/lodash/_baseKeys.js","./isArrayLike":"node_modules/lodash/isArrayLike.js"}],"node_modules/lodash/values.js":[function(require,module,exports) {
+var baseValues = require('./_baseValues'),
+    keys = require('./keys');
+
+/**
+ * Creates an array of the own enumerable string keyed property values of `object`.
+ *
+ * **Note:** Non-object values are coerced to objects.
+ *
+ * @static
+ * @since 0.1.0
+ * @memberOf _
+ * @category Object
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property values.
+ * @example
+ *
+ * function Foo() {
+ *   this.a = 1;
+ *   this.b = 2;
+ * }
+ *
+ * Foo.prototype.c = 3;
+ *
+ * _.values(new Foo);
+ * // => [1, 2] (iteration order is not guaranteed)
+ *
+ * _.values('hi');
+ * // => ['h', 'i']
+ */
+function values(object) {
+  return object == null ? [] : baseValues(object, keys(object));
+}
+
+module.exports = values;
+
+},{"./_baseValues":"node_modules/lodash/_baseValues.js","./keys":"node_modules/lodash/keys.js"}],"node_modules/lodash/_baseSample.js":[function(require,module,exports) {
+var arraySample = require('./_arraySample'),
+    values = require('./values');
+
+/**
+ * The base implementation of `_.sample`.
+ *
+ * @private
+ * @param {Array|Object} collection The collection to sample.
+ * @returns {*} Returns the random element.
+ */
+function baseSample(collection) {
+  return arraySample(values(collection));
+}
+
+module.exports = baseSample;
+
+},{"./_arraySample":"node_modules/lodash/_arraySample.js","./values":"node_modules/lodash/values.js"}],"node_modules/lodash/sample.js":[function(require,module,exports) {
+var arraySample = require('./_arraySample'),
+    baseSample = require('./_baseSample'),
+    isArray = require('./isArray');
+
+/**
+ * Gets a random element from `collection`.
+ *
+ * @static
+ * @memberOf _
+ * @since 2.0.0
+ * @category Collection
+ * @param {Array|Object} collection The collection to sample.
+ * @returns {*} Returns the random element.
+ * @example
+ *
+ * _.sample([1, 2, 3, 4]);
+ * // => 2
+ */
+function sample(collection) {
+  var func = isArray(collection) ? arraySample : baseSample;
+  return func(collection);
+}
+
+module.exports = sample;
+
+},{"./_arraySample":"node_modules/lodash/_arraySample.js","./_baseSample":"node_modules/lodash/_baseSample.js","./isArray":"node_modules/lodash/isArray.js"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -30945,7 +31910,178 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/components/Container.css":[function(require,module,exports) {
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/components/Canvas.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+module.exports = {
+  "wrapper": "_wrapper_el2p2_1",
+  "canvas": "_canvas_el2p2_8",
+  "coloured": "_coloured_el2p2_16"
+};
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Canvas.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _sample = _interopRequireDefault(require("lodash/sample"));
+
+var _Canvas = _interopRequireDefault(require("./Canvas.css"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+var colours = ['aqua', 'pink', 'magenta', 'aquamarine', 'coral', 'blueviolet', 'skyblue'];
+
+var Canvas =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Canvas, _Component);
+
+  function Canvas() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, Canvas);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Canvas)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _this.addMouseMoveEvent = function () {
+      _this.canvas.addEventListener('mousemove', _this.mouseMove);
+
+      _this.canvas.addEventListener('touchmove', _this.touchMove);
+    };
+
+    _this.removeMouseMoveEvent = function () {
+      _this.canvas.removeEventListener('mousemove', _this.mouseMove);
+
+      _this.prevX = null;
+      _this.prevY = null;
+    };
+
+    _this.mouseMove = function (_ref) {
+      var offsetX = _ref.offsetX,
+          offsetY = _ref.offsetY;
+
+      _this.draw(offsetX, offsetY);
+    };
+
+    _this.touchMove = function (_ref2) {
+      var touches = _ref2.touches;
+      var _touches$ = touches[0],
+          clientX = _touches$.clientX,
+          clientY = _touches$.clientY;
+
+      var _touches$0$target$get = touches[0].target.getBoundingClientRect(),
+          top = _touches$0$target$get.top,
+          left = _touches$0$target$get.left;
+
+      _this.draw(clientX - left, clientY - top);
+    };
+
+    _this.draw = function (x, y) {
+      var _assertThisInitialize = _assertThisInitialized(_assertThisInitialized(_this)),
+          context = _assertThisInitialize.context,
+          prevX = _assertThisInitialize.prevX,
+          prevY = _assertThisInitialize.prevY;
+
+      if (prevX && prevY) {
+        context.beginPath();
+        context.moveTo(prevX, prevY);
+        context.lineTo(x, y);
+        context.lineWidth = 6;
+        context.lineJoin = 'round';
+        context.strokeStyle = (0, _sample.default)(colours);
+        context.stroke();
+        context.closePath();
+      }
+
+      _this.prevX = x;
+      _this.prevY = y;
+    };
+
+    return _this;
+  }
+
+  _createClass(Canvas, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var _this$canvas$getBound = this.canvas.getBoundingClientRect(),
+          width = _this$canvas$getBound.width,
+          height = _this$canvas$getBound.height;
+
+      this.canvas.width = width;
+      this.canvas.height = height;
+      this.context = this.canvas.getContext('2d');
+      this.canvas.addEventListener('mousedown', this.addMouseMoveEvent);
+      this.canvas.addEventListener('mouseup', this.removeMouseMoveEvent);
+      this.canvas.addEventListener('touchstart', function (e) {
+        _this2.addMouseMoveEvent();
+
+        e.preventDefault();
+      });
+      this.canvas.addEventListener('touchend', function (e) {
+        _this2.removeMouseMoveEvent();
+
+        e.preventDefault();
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      return _react.default.createElement("div", {
+        className: _Canvas.default.wrapper
+      }, _react.default.createElement("p", null, "Feeling bored? ", _react.default.createElement("span", {
+        className: _Canvas.default.coloured
+      }, "Draw"), " something below:"), _react.default.createElement("canvas", {
+        className: _Canvas.default.canvas,
+        ref: function ref(el) {
+          _this3.canvas = el;
+        }
+      }));
+    }
+  }]);
+
+  return Canvas;
+}(_react.Component);
+
+var _default = Canvas;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","lodash/sample":"node_modules/lodash/sample.js","./Canvas.css":"src/components/Canvas.css"}],"src/components/Container.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -38444,68 +39580,7 @@ function (_Component) {
 
 var _default = Day;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","moment":"node_modules/moment/moment.js","react-collapse":"node_modules/react-collapse/lib/index.js","./Session":"src/components/Session.js","../images/chevron.svg":"src/images/chevron.svg","./Day.css":"src/components/Day.css"}],"src/images/grads.jpg":[function(require,module,exports) {
-module.exports = "/grads.a4eeeb69.jpg";
-},{}],"src/components/Header.css":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-module.exports = {
-  "header": "_header_1kd2p_1",
-  "rea": "_rea_1kd2p_9",
-  "text": "_text_1kd2p_13",
-  "title": "_title_1kd2p_25",
-  "subtitle": "_subtitle_1kd2p_33"
-};
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Header.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _Container = _interopRequireDefault(require("./Container"));
-
-var _grads = _interopRequireDefault(require("../images/grads.jpg"));
-
-var _Header = _interopRequireDefault(require("./Header.css"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var overlay = 'rgba(30, 40, 70, 0.7)';
-var backgroundStyles = {
-  backgroundImage: "linear-gradient(".concat(overlay, ", ").concat(overlay, "), url('").concat(_grads.default, "')")
-};
-
-var Header = function Header() {
-  return _react.default.createElement("div", {
-    style: backgroundStyles,
-    className: _Header.default.header
-  }, _react.default.createElement(_Container.default, {
-    style: {
-      paddingTop: '2rem',
-      height: '100%'
-    }
-  }, _react.default.createElement("img", {
-    alt: "rea",
-    src: "https://s1.rui.au.reastatic.net/rui-static/img/rea-logo-thin-white-v3.png",
-    className: _Header.default.rea
-  }), _react.default.createElement("div", {
-    className: _Header.default.text
-  }, _react.default.createElement("h1", {
-    className: _Header.default.title
-  }, "O", _react.default.createElement("small", null, "(n)"), "Week+"), _react.default.createElement("h2", {
-    className: _Header.default.subtitle
-  }, "11", _react.default.createElement("sup", null, "th"), " - 15", _react.default.createElement("sup", null, "th"), " February 2019"))));
-};
-
-var _default = Header;
-exports.default = _default;
-},{"react":"node_modules/react/index.js","./Container":"src/components/Container.js","../images/grads.jpg":"src/images/grads.jpg","./Header.css":"src/components/Header.css"}],"src/components/Heading.css":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","moment":"node_modules/moment/moment.js","react-collapse":"node_modules/react-collapse/lib/index.js","./Session":"src/components/Session.js","../images/chevron.svg":"src/images/chevron.svg","./Day.css":"src/components/Day.css"}],"src/components/Heading.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -38536,124 +39611,7 @@ var Heading = function Heading(_ref) {
 
 var _default = Heading;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./Heading.css":"src/components/Heading.css"}],"src/images/kate.png":[function(require,module,exports) {
-module.exports = "/kate.484f1f2f.png";
-},{}],"src/images/greg.png":[function(require,module,exports) {
-module.exports = "/greg.a2a338ce.png";
-},{}],"src/components/Help.css":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-module.exports = {
-  "help": "_help_1enzq_1",
-  "title": "_title_1enzq_8",
-  "helpers": "_helpers_1enzq_12",
-  "helper": "_helper_1enzq_12",
-  "avatar": "_avatar_1enzq_23",
-  "name": "_name_1enzq_37",
-  "slack": "_slack_1enzq_44"
-};
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Help.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _Container = _interopRequireDefault(require("./Container"));
-
-var _Heading = _interopRequireDefault(require("./Heading"));
-
-var _kate = _interopRequireDefault(require("../images/kate.png"));
-
-var _greg = _interopRequireDefault(require("../images/greg.png"));
-
-var _Help = _interopRequireDefault(require("./Help.css"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var helpers = [{
-  name: 'Greg Thom',
-  img: _greg.default,
-  slack: '@greg.thom'
-}, {
-  name: 'Kate Scrim',
-  img: _kate.default,
-  slack: '@kate.scrim'
-}];
-
-var Help = function Help() {
-  return _react.default.createElement("div", {
-    className: _Help.default.help
-  }, _react.default.createElement(_Container.default, null, _react.default.createElement(_Heading.default, null, "Need help?"), _react.default.createElement("div", {
-    className: _Help.default.helpers
-  }, helpers.map(function (person) {
-    return _react.default.createElement("div", {
-      className: _Help.default.helper,
-      key: person.name
-    }, _react.default.createElement("img", {
-      className: _Help.default.avatar,
-      src: person.img,
-      alt: "headshot"
-    }), _react.default.createElement("span", {
-      className: _Help.default.name
-    }, person.name), _react.default.createElement("span", {
-      className: _Help.default.slack
-    }, person.slack));
-  }))));
-};
-
-var _default = Help;
-exports.default = _default;
-},{"react":"node_modules/react/index.js","./Container":"src/components/Container.js","./Heading":"src/components/Heading.js","../images/kate.png":"src/images/kate.png","../images/greg.png":"src/images/greg.png","./Help.css":"src/components/Help.css"}],"src/images/grad-logo.png":[function(require,module,exports) {
-module.exports = "/grad-logo.cb1e9d5e.png";
-},{}],"src/components/Footer.css":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-module.exports = {
-  "logoWrapper": "_logoWrapper_1h3az_1",
-  "logo": "_logo_1h3az_1",
-  "text": "_text_1h3az_20"
-};
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Footer.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _gradLogo = _interopRequireDefault(require("../images/grad-logo.png"));
-
-var _Footer = _interopRequireDefault(require("./Footer.css"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Footer = function Footer() {
-  return _react.default.createElement("div", {
-    className: _Footer.default.logoWrapper
-  }, _react.default.createElement("img", {
-    className: _Footer.default.logo,
-    src: _gradLogo.default,
-    alt: "Grad logo"
-  }), _react.default.createElement("span", {
-    "aria-label": "footer",
-    role: "img",
-    className: _Footer.default.text
-  }, "Made by James Formica in literally an afternoon \uD83D\uDC9C"));
-};
-
-var _default = Footer;
-exports.default = _default;
-},{"react":"node_modules/react/index.js","../images/grad-logo.png":"src/images/grad-logo.png","./Footer.css":"src/components/Footer.css"}],"src/schedule.json":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Heading.css":"src/components/Heading.css"}],"src/schedule.json":[function(require,module,exports) {
 module.exports = [{
   "day": "2019-02-11",
   "sessions": [{
@@ -38829,7 +39787,236 @@ module.exports = [{
     "moreInfo": "Enjoy some lunch with your mentors, then embark on️ a top secret journey that has probably already been spoiled for you cause people are sometimes like that and don't like to let other people have any fun. 🤬"
   }]
 }];
-},{}],"src/components/App.js":[function(require,module,exports) {
+},{}],"src/components/Content.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+module.exports = {
+  "content": "_content_axnhd_1",
+  "spacer": "_spacer_axnhd_5"
+};
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Content.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _Canvas = _interopRequireDefault(require("./Canvas"));
+
+var _Container = _interopRequireDefault(require("./Container"));
+
+var _Day = _interopRequireDefault(require("./Day"));
+
+var _Heading = _interopRequireDefault(require("./Heading"));
+
+var _schedule = _interopRequireDefault(require("../schedule.json"));
+
+var _Content = _interopRequireDefault(require("./Content.css"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Content = function Content() {
+  return _react.default.createElement("div", {
+    className: _Content.default.content
+  }, _react.default.createElement(_Container.default, null, _react.default.createElement("div", {
+    className: _Content.default.spacer
+  }), _react.default.createElement(_Heading.default, null, "Your schedule"), _schedule.default.map(function (day) {
+    return _react.default.createElement(_Day.default, {
+      key: day.day,
+      day: day
+    });
+  }), _react.default.createElement(_Canvas.default, null)));
+};
+
+var _default = Content;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","./Canvas":"src/components/Canvas.js","./Container":"src/components/Container.js","./Day":"src/components/Day.js","./Heading":"src/components/Heading.js","../schedule.json":"src/schedule.json","./Content.css":"src/components/Content.css"}],"src/images/grads.jpg":[function(require,module,exports) {
+module.exports = "/grads.a4eeeb69.jpg";
+},{}],"src/components/Header.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+module.exports = {
+  "header": "_header_1hhnu_1",
+  "bg": "_bg_1hhnu_6 _header_1hhnu_1",
+  "rea": "_rea_1hhnu_19",
+  "text": "_text_1hhnu_23",
+  "title": "_title_1hhnu_35",
+  "subtitle": "_subtitle_1hhnu_43"
+};
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Header.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _Container = _interopRequireDefault(require("./Container"));
+
+var _grads = _interopRequireDefault(require("../images/grads.jpg"));
+
+var _Header = _interopRequireDefault(require("./Header.css"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var overlay = 'rgba(30, 40, 70, 0.7)';
+var backgroundStyles = {
+  backgroundImage: "linear-gradient(".concat(overlay, ", ").concat(overlay, "), url('").concat(_grads.default, "')")
+};
+
+var Header = function Header() {
+  return _react.default.createElement("div", {
+    className: _Header.default.header
+  }, _react.default.createElement("div", {
+    className: _Header.default.bg,
+    style: backgroundStyles
+  }), _react.default.createElement(_Container.default, {
+    style: {
+      paddingTop: '2rem',
+      height: '100%'
+    }
+  }, _react.default.createElement("img", {
+    alt: "rea",
+    src: "https://s1.rui.au.reastatic.net/rui-static/img/rea-logo-thin-white-v3.png",
+    className: _Header.default.rea
+  }), _react.default.createElement("div", {
+    className: _Header.default.text
+  }, _react.default.createElement("h1", {
+    className: _Header.default.title
+  }, "O", _react.default.createElement("small", null, "(n)"), "Week+"), _react.default.createElement("h2", {
+    className: _Header.default.subtitle
+  }, "11", _react.default.createElement("sup", null, "th"), " - 15", _react.default.createElement("sup", null, "th"), " February 2019"))));
+};
+
+var _default = Header;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","./Container":"src/components/Container.js","../images/grads.jpg":"src/images/grads.jpg","./Header.css":"src/components/Header.css"}],"src/images/kate.png":[function(require,module,exports) {
+module.exports = "/kate.484f1f2f.png";
+},{}],"src/images/greg.png":[function(require,module,exports) {
+module.exports = "/greg.a2a338ce.png";
+},{}],"src/components/Help.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+module.exports = {
+  "help": "_help_smwwm_1",
+  "title": "_title_smwwm_7",
+  "helpers": "_helpers_smwwm_11",
+  "helper": "_helper_smwwm_11",
+  "avatar": "_avatar_smwwm_22",
+  "name": "_name_smwwm_36",
+  "slack": "_slack_smwwm_43"
+};
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Help.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _Container = _interopRequireDefault(require("./Container"));
+
+var _Heading = _interopRequireDefault(require("./Heading"));
+
+var _kate = _interopRequireDefault(require("../images/kate.png"));
+
+var _greg = _interopRequireDefault(require("../images/greg.png"));
+
+var _Help = _interopRequireDefault(require("./Help.css"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var helpers = [{
+  name: 'Greg Thom',
+  img: _greg.default,
+  slack: '@greg.thom'
+}, {
+  name: 'Kate Scrim',
+  img: _kate.default,
+  slack: '@kate.scrim'
+}];
+
+var Help = function Help() {
+  return _react.default.createElement("div", {
+    className: _Help.default.help
+  }, _react.default.createElement(_Container.default, null, _react.default.createElement(_Heading.default, null, "Need help?"), _react.default.createElement("div", {
+    className: _Help.default.helpers
+  }, helpers.map(function (person) {
+    return _react.default.createElement("div", {
+      className: _Help.default.helper,
+      key: person.name
+    }, _react.default.createElement("img", {
+      className: _Help.default.avatar,
+      src: person.img,
+      alt: "headshot"
+    }), _react.default.createElement("span", {
+      className: _Help.default.name
+    }, person.name), _react.default.createElement("span", {
+      className: _Help.default.slack
+    }, person.slack));
+  }))));
+};
+
+var _default = Help;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","./Container":"src/components/Container.js","./Heading":"src/components/Heading.js","../images/kate.png":"src/images/kate.png","../images/greg.png":"src/images/greg.png","./Help.css":"src/components/Help.css"}],"src/images/grad-logo.png":[function(require,module,exports) {
+module.exports = "/grad-logo.cb1e9d5e.png";
+},{}],"src/components/Footer.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+module.exports = {
+  "logoWrapper": "_logoWrapper_1h3az_1",
+  "logo": "_logo_1h3az_1",
+  "text": "_text_1h3az_20"
+};
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Footer.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _gradLogo = _interopRequireDefault(require("../images/grad-logo.png"));
+
+var _Footer = _interopRequireDefault(require("./Footer.css"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Footer = function Footer() {
+  return _react.default.createElement("div", {
+    className: _Footer.default.logoWrapper
+  }, _react.default.createElement("img", {
+    className: _Footer.default.logo,
+    src: _gradLogo.default,
+    alt: "Grad logo"
+  }), _react.default.createElement("span", {
+    "aria-label": "footer",
+    role: "img",
+    className: _Footer.default.text
+  }, "Made by James Formica in literally an afternoon \uD83D\uDC9C"));
+};
+
+var _default = Footer;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","../images/grad-logo.png":"src/images/grad-logo.png","./Footer.css":"src/components/Footer.css"}],"src/components/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38839,36 +40026,25 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _Container = _interopRequireDefault(require("./Container"));
-
-var _Day = _interopRequireDefault(require("./Day"));
+var _Content = _interopRequireDefault(require("./Content"));
 
 var _Header = _interopRequireDefault(require("./Header"));
-
-var _Heading = _interopRequireDefault(require("./Heading"));
 
 var _Help = _interopRequireDefault(require("./Help"));
 
 var _Footer = _interopRequireDefault(require("./Footer"));
-
-var _schedule = _interopRequireDefault(require("../schedule.json"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 var App = function App() {
-  return _react.default.createElement(_react.Fragment, null, _react.default.createElement(_Header.default, null), _react.default.createElement(_Help.default, null), _react.default.createElement(_Container.default, null, _react.default.createElement(_Heading.default, null, "Your schedule"), _schedule.default.map(function (day) {
-    return _react.default.createElement(_Day.default, {
-      key: day.day,
-      day: day
-    });
-  })), _react.default.createElement(_Footer.default, null));
+  return _react.default.createElement(_react.Fragment, null, _react.default.createElement(_Header.default, null), _react.default.createElement(_Help.default, null), _react.default.createElement(_Content.default, null), _react.default.createElement(_Footer.default, null));
 };
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./Container":"src/components/Container.js","./Day":"src/components/Day.js","./Header":"src/components/Header.js","./Heading":"src/components/Heading.js","./Help":"src/components/Help.js","./Footer":"src/components/Footer.js","../schedule.json":"src/schedule.json"}],"src/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Content":"src/components/Content.js","./Header":"src/components/Header.js","./Help":"src/components/Help.js","./Footer":"src/components/Footer.js"}],"src/index.js":[function(require,module,exports) {
 var global = arguments[3];
 "use strict";
 
@@ -39162,7 +40338,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52210" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65479" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
