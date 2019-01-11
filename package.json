@@ -1,12 +1,12 @@
 {
   "name": "onweek-plus",
-  "homepage": "https://pages.git.realestate.com.au/james-formica/onweek-plus-schedule/",
+  "homepage": "https://jamesformica.me/onweek-schedule/",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html --public-url https://pages.git.realestate.com.au/james-formica/onweek-plus-schedule/",
+    "build": "parcel build index.html --public-url https://jamesformica.me/onweek-schedule/",
     "lint": "yarn eslint .",
     "predeploy": "yarn lint && yarn build",
     "deploy": "gh-pages -d dist"
