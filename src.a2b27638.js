@@ -39843,12 +39843,12 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "header": "_header_1hhnu_1",
-  "bg": "_bg_1hhnu_6 _header_1hhnu_1",
-  "rea": "_rea_1hhnu_19",
-  "text": "_text_1hhnu_23",
-  "title": "_title_1hhnu_35",
-  "subtitle": "_subtitle_1hhnu_43"
+  "header": "_header_36bpm_1",
+  "bg": "_bg_36bpm_6 _header_36bpm_1",
+  "rea": "_rea_36bpm_19",
+  "text": "_text_36bpm_23",
+  "title": "_title_36bpm_35",
+  "subtitle": "_subtitle_36bpm_43"
 };
 },{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Header.js":[function(require,module,exports) {
 "use strict";
@@ -40338,7 +40338,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65479" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65194" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
