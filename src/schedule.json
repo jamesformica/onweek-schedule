@@ -1,5 +1,263 @@
 [
   {
+    "day": "2019-02-04",
+    "sessions": [
+      {
+        "start": "08:45",
+        "end": "09:00",
+        "title": "Welcome 6.0s",
+        "hostedBy": "Greg Thom",
+        "moreInfo": "A big welcome to the REA family! We hope you are just as excited as we are."
+      },
+      {
+        "start": "09:00",
+        "end": "10:00",
+        "title": "Welcome to REA",
+        "hostedBy": "Nigel Dalton",
+        "moreInfo": "I really don't have to write anything for this. You are all going to love this."
+      },
+      {
+        "start": "10:15",
+        "end": "10:40",
+        "title": "Careers at REA",
+        "hostedBy": "Manisha",
+        "moreInfo": "?"
+      },
+      {
+        "start": "10:40",
+        "end": "11:15",
+        "title": "It's laptop time",
+        "hostedBy": "ETS",
+        "moreInfo": "And now, for the moment you've all been waiting for, time to get your new laptops! And then to cover them in stickers."
+      },
+      {
+        "start": "11:20",
+        "end": "11:45",
+        "title": "Grad program experience",
+        "hostedBy": "Ash",
+        "moreInfo": "It might be hard to know what exactly to expect from the grad program, instead of wondering, how about we let an ex grad tell you all about their experience."
+      },
+      {
+        "start": "11:45",
+        "end": "12:30",
+        "title": "Lunch",
+        "moreInfo": "Woooo the first of many lunches."
+      },
+      {
+        "start": "12:30",
+        "end": "2:30",
+        "title": "Bus bus bus",
+        "hostedBy": "the Bus driver",
+        "moreInfo": "Time for an adventure. The wheels on the bus go round and round! All the way to an undisclosed destination that you are probably aware of. 🚌"
+      },
+      {
+        "start": "14:30",
+        "end": "15:30",
+        "title": "Unpack and get settled",
+        "moreInfo": "Stretch those legs and unpack ya stuff."
+      },
+      {
+        "start": "15:30",
+        "end": "16:30",
+        "title": "Social contract",
+        "hostedBy": "Ash"
+      },
+      {
+        "start": "16:30",
+        "end": "17:00",
+        "title": "Beach 🏖",
+        "moreInfo": "We think you deserve a break, let's head to the beach and enjoy the evening. Unless it's raining, that would suck."
+      },
+      {
+        "start": "18:00",
+        "end": "21:00",
+        "title": "Dinner / free time / activities",
+        "hostedBy": "everyone",
+        "moreInfo": "Yep 👍"
+      }
+    ]
+  },
+  {
+    "day": "2019-02-05",
+    "sessions": [
+      {
+        "start": "06:00",
+        "end": "08:30",
+        "title": "Breakie time",
+        "moreInfo": "You've got a big day ahead of you, and you know what they say: breakfast is the most important meal of the day!"
+      },
+      {
+        "start": "09:00",
+        "end": "10:00",
+        "title": "Environment setup",
+        "hostedBy": "your 5.0 buddy",
+        "moreInfo": "Let's setup your fancy new laptops so that you're ready to smash out some code / designs / business requirements."
+      },
+      {
+        "start": "10:30",
+        "end": "12:00",
+        "title": "Intro to Agile @ REA",
+        "hostedBy": "Manisha",
+        "moreInfo": "Every body does Agile a little different and REA is no exception. Manisha is here to explain how we approach Agile development here at REA."
+      },
+      {
+        "start": "12:00",
+        "end": "13:00",
+        "title": "Lunch",
+        "moreInfo": "Lunch, lunch, lunch, lunch!"
+      },
+      {
+        "start": "13:00",
+        "end": "16:30",
+        "title": "Agile @ REA continued",
+        "hostedBy": "Manisha",
+        "moreInfo": "But wait! There's more! A lot more! Agile is complex, and REA is complex, therefore Agile at REA is complex."
+      },
+      {
+        "start": "16:30",
+        "end": "18:00",
+        "title": "Free time",
+        "moreInfo": "Roam free, explore, chat, do whatever you like (within the confines of the law)."
+      },
+      {
+        "start": "18:30",
+        "end": "20:00",
+        "title": "Dinner",
+        "moreInfo": "It's just like lunch, but at night time!"
+      }
+    ]
+  },
+  {
+    "day": "2019-02-06",
+    "sessions": [
+      {
+        "start": "06:00",
+        "end": "08:30",
+        "title": "Brekkie",
+        "moreInfo": "May I suggest the croissant with a side of apple slices? (I don't know if we have either of those things)"
+      },
+      {
+        "start": "08:30",
+        "end": "11:00",
+        "title": "Mentors arrive",
+        "moreInfo": "😱 😱 😱 O.M.G"
+      },
+      {
+        "start": "11:00",
+        "end": "12:00",
+        "title": "Project kickoffs",
+        "moreInfo": "Calling all developers, UX, and data people! It's time we kick off your projects and start coming up with solutions!"
+      },
+      {
+        "start": "12:00",
+        "end": "13:00",
+        "title": "Lunchies",
+        "moreInfo": "Ok ok, put down your tools for a bit. I know you're excited but you need to eat!"
+      },
+      {
+        "start": "13:00",
+        "end": "17:00",
+        "title": "Project time",
+        "moreInfo": "Go! Go! Go! Go! Go! It's probably about now that things are starting to get competitive..."
+      },
+      {
+        "start": "17:00",
+        "end": "18:30",
+        "title": "Wind down",
+        "moreInfo": "Chillax for a bit, you've been working hard. You all deserve a break."
+      },
+      {
+        "start": "18:30",
+        "end": "21:00",
+        "title": "BBQ dinner",
+        "moreInfo": "Yassssssss BBQ."
+      }
+    ]
+  },
+  {
+    "day": "2019-02-07",
+    "sessions": [
+      {
+        "start": "06:00",
+        "end": "08:30",
+        "title": "Breakfast time",
+        "moreInfo": "I think I'm lactose intolerant, I should probably stop eating 3 full bowls of cereal..."
+      },
+      {
+        "start": "09:00",
+        "end": "12:00",
+        "title": "Project time",
+        "moreInfo": "What are you doing reading this??? Go work on your project!!!"
+      },
+      {
+        "start": "12:00",
+        "end": "13:00",
+        "title": "Lunch time",
+        "moreInfo": "I bet you're hungry! Well good thing we don't let our new grads starve, dig in!"
+      },
+      {
+        "start": "13:00",
+        "end": "17:00",
+        "title": "Porject time 2.0",
+        "moreInfo": "Only 4 hours left to work! Also, yes, I did spell project wrong on purpose, don't ask me why. Also, the lady on the train next to me is talking really loudly on the phone and it is super distracting. Some people. OMG apparently she saw a dead body at Woolworths... What is wrong with some people?!"
+      },
+      {
+        "start": "17:00",
+        "end": "18:00",
+        "title": "Departure of mentors",
+        "moreInfo": "With teary eyes we will slowly leave and head home. Fear not, we will see you again."
+      },
+      {
+        "start": "18:00",
+        "end": "21:00",
+        "title": "Dinner (I assume)",
+        "moreInfo": "I can't see a card for dinner on the Trello board but I doubt they'd let you go to sleep hungry... I think."
+      }
+    ]
+  },
+  {
+    "day": "2019-02-08",
+    "sessions": [
+      {
+        "start": "06:00",
+        "end": "08:30",
+        "title": "Breakfast is served",
+        "moreInfo": "Eat up! It's going be a big day! You'll need all the energy you can get if you're going to beat all the other teams."
+      },
+      {
+        "start": "08:30",
+        "end": "10:00",
+        "title": "Clean up",
+        "moreInfo": "Harness your inner Snow White and sing to get all the wildlife in the area to help clean up the place. 🎶🎶🎶"
+      },
+      {
+        "start": "10:00",
+        "end": "12:00",
+        "title": "Departure and travel",
+        "moreInfo": "Hopefully you are all super duper friends now and have plenty to chat about on the way back."
+      },
+      {
+        "start": "12:00",
+        "end": "13:00",
+        "title": "Last lunch of the week",
+        "location": "REA ground floor",
+        "moreInfo": "Make the most of it! Slip some food into your backpack for later on!"
+      },
+      {
+        "start": "13:00",
+        "end": "16:00",
+        "title": "Showcase prep",
+        "moreInfo": "This is it! Crunch time! Pretend you're going on Shark Tank and are about to give the biggest pitch of your life. No pressure of course..."
+      },
+      {
+        "start": "16:00",
+        "end": "16:30",
+        "title": "Showcase time",
+        "moreInfo": "Just remember: If you can't dazzle them with brilliance, baffle them with bulls***!"
+      }
+    ]
+  },
+  {
     "day": "2019-02-11",
     "sessions": [
       {
@@ -28,6 +286,14 @@
       },
       {
         "start": "13:30",
+        "end": "14:00",
+        "title": "Meet and greet",
+        "hostedBy": "Tom V",
+        "location": "Uni Hall",
+        "moreInfo": "This man has more wisdon in his left thumb than I do in my entire body, so listen up and ask lots of questions!"
+      },
+      {
+        "start": "14:00",
         "end": "15:00",
         "title": "Intro to REA and our LOBs",
         "hostedBy": "Greg and Kate",
@@ -60,7 +326,7 @@
         "title": "Intro to systems",
         "hostedBy": "Joh",
         "location": "Hamer Hall",
-        "moreInfo": "You've heard all about engineerings, now it's time turn up the dial and learn about all the systems at REA, what's the difference? You're about to find out! And hopefully so am I..."
+        "moreInfo": "You've heard all about engineering, now it's time turn up the dial and learn about all the systems at REA, what's the difference? You're about to find out! And hopefully so am I..."
       },
       {
         "start": "12:00",
@@ -147,6 +413,13 @@
         "moreInfo": "What do we want? MORE SNACKS! When do we want them? NOW!."
       },
       {
+        "start": "10:15",
+        "end": "11:15",
+        "title": "How to wear your QA hat",
+        "hostedBy": "Theresa",
+        "moreInfo": "We don't just ship things willy nilly at REA. Before they go out they have to pass QA. Sometimes teams have a dedicated QA, sometimes the team IS the QA. Regardless, it is an important skill to learn."
+      },
+      {
         "start": "12:00",
         "end": "13:30",
         "title": "Lunch",
@@ -156,15 +429,15 @@
       },
       {
         "start": "13:30",
-        "end": "14:00",
-        "title": "Things I have learnt as an adult",
+        "end": "14:30",
+        "title": "Intro to P&C",
         "hostedBy": "Kate",
         "location": "The Provincial",
-        "moreInfo": "Here is a little known secret that all adults try their best to cover up: No one knows what they are doing and we are all making it up as we go along 🤯. Being an adult is sometimes hard, luckly we have Kate here to provide some lessons and advice."
+        "moreInfo": "The lovely team of People and Culture is here to help. Kate is going to walk you through who they are and what they can do for you!"
       },
       {
-        "start": "14:00",
-        "end": "15:00",
+        "start": "14:30",
+        "end": "15:30",
         "title": "System set up",
         "hostedBy": "your 5.0 buddy",
         "location": "The Provincial",
@@ -176,18 +449,18 @@
     "day": "2019-02-15",
     "sessions": [
       {
-        "start": "09:00",
-        "end": "10:00",
+        "start": "09:30",
+        "end": "10:30",
         "title": "Intro to strategy",
         "hostedBy": "Peter Li",
         "location": "Concert Hall",
         "moreInfo": "Do you like chess? ♟ Sometimes a business is just like chess! You need to plan 5 moves ahead and think about what your opposition is trying to do to get ahead of you! That's where strategy comes in. Sit back and stay sharp cause you gon' learn a lot in this one."
       },
       {
-        "start": "10:00",
+        "start": "10:30",
         "end": "11:00",
         "title": "Morning tea / snacks",
-        "moreInfo": "What? A whole hour for snacks?!?! 🥰 I think I'm in love."
+        "moreInfo": "What? A whole half hour for snacks?!?! 🥰 I think I'm in love."
       },
       {
         "start": "11:00",

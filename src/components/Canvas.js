@@ -16,8 +16,10 @@ class Canvas extends Component {
     this.canvas.addEventListener('mouseup', this.removeMouseMoveEvent)
 
     this.canvas.addEventListener('touchstart', (e) => {
-      this.addMouseMoveEvent()
-      e.preventDefault()
+      if (e.touches.length === 1) {
+        this.addMouseMoveEvent()
+        e.preventDefault()
+      }
     })
 
     this.canvas.addEventListener('touchend', (e) => {

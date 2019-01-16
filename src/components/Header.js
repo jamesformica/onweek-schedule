@@ -26,7 +26,7 @@ const Header = () => (
           O<small>(n)</small>Week+
         </h1>
         <h2 className={styles.subtitle}>
-          11<sup>th</sup> - 15<sup>th</sup> February 2019
+          4<sup>th</sup> - 15<sup>th</sup> February 2019
         </h2>
       </div>
     </Container>
