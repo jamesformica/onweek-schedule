@@ -2,6 +2,7 @@ import React from 'react'
 
 import Container from './Container'
 import grads from '../images/grads.jpg'
+import reaLogo from '../images/realogo-white.svg'
 import styles from './Header.css'
 
 const overlay = 'rgba(30, 40, 70, 0.7)'
@@ -17,7 +18,7 @@ const Header = () => (
     <Container style={{ paddingTop: '2rem', height: '100%' }}>
       <img
         alt="rea"
-        src="https://s1.rui.au.reastatic.net/rui-static/img/rea-logo-thin-white-v3.png"
+        src={reaLogo}
         className={styles.rea}
       />
 
