@@ -40063,18 +40063,20 @@ var _default = Content;
 exports.default = _default;
 },{"react":"node_modules/react/index.js","./Canvas":"src/components/Canvas.js","./Container":"src/components/Container.js","./Day":"src/components/Day.js","./Heading":"src/components/Heading.js","../schedule.json":"src/schedule.json","./Content.css":"src/components/Content.css"}],"src/images/grads.jpg":[function(require,module,exports) {
 module.exports = "/grads.a4eeeb69.jpg";
+},{}],"src/images/realogo-white.svg":[function(require,module,exports) {
+module.exports = "/realogo-white.75dc7109.svg";
 },{}],"src/components/Header.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "header": "_header_1ooui_1",
-  "bg": "_bg_1ooui_5 _header_1ooui_1",
-  "rea": "_rea_1ooui_17",
-  "text": "_text_1ooui_21",
-  "title": "_title_1ooui_33",
-  "subtitle": "_subtitle_1ooui_41"
+  "header": "_header_1ib94_1",
+  "bg": "_bg_1ib94_5 _header_1ib94_1",
+  "rea": "_rea_1ib94_17",
+  "text": "_text_1ib94_21",
+  "title": "_title_1ib94_33",
+  "subtitle": "_subtitle_1ib94_41"
 };
 },{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Header.js":[function(require,module,exports) {
 "use strict";
@@ -40089,6 +40091,8 @@ var _react = _interopRequireDefault(require("react"));
 var _Container = _interopRequireDefault(require("./Container"));
 
 var _grads = _interopRequireDefault(require("../images/grads.jpg"));
+
+var _realogoWhite = _interopRequireDefault(require("../images/realogo-white.svg"));
 
 var _Header = _interopRequireDefault(require("./Header.css"));
 
@@ -40112,7 +40116,7 @@ var Header = function Header() {
     }
   }, _react.default.createElement("img", {
     alt: "rea",
-    src: "https://s1.rui.au.reastatic.net/rui-static/img/rea-logo-thin-white-v3.png",
+    src: _realogoWhite.default,
     className: _Header.default.rea
   }), _react.default.createElement("div", {
     className: _Header.default.text
@@ -40125,7 +40129,7 @@ var Header = function Header() {
 
 var _default = Header;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./Container":"src/components/Container.js","../images/grads.jpg":"src/images/grads.jpg","./Header.css":"src/components/Header.css"}],"src/images/kate.png":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Container":"src/components/Container.js","../images/grads.jpg":"src/images/grads.jpg","../images/realogo-white.svg":"src/images/realogo-white.svg","./Header.css":"src/components/Header.css"}],"src/images/kate.png":[function(require,module,exports) {
 module.exports = "/kate.484f1f2f.png";
 },{}],"src/images/greg.png":[function(require,module,exports) {
 module.exports = "/greg.a2a338ce.png";
@@ -40564,7 +40568,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62869" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64315" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
