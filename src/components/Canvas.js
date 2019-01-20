@@ -3,14 +3,19 @@ import sample from 'lodash/sample'
 
 import styles from './Canvas.css'
 
-const colours = ['aqua', 'pink', 'magenta', 'aquamarine', 'coral', 'blueviolet', 'skyblue']
+const MODES = ['black', 'rainbow', 'eraser']
+const COLOURS = ['aqua', 'pink', 'magenta', 'aquamarine', 'coral', 'blueviolet', 'skyblue']
+const SIZES = { pen: 4, eraser: 8 }
 
 class Canvas extends Component {
+  state = {
+    drawingMode: MODES[0],
+  }
+
   componentDidMount() {
     const { width, height } = this.canvas.getBoundingClientRect()
     this.canvas.width = width
     this.canvas.height = height
-    this.context = this.canvas.getContext('2d')
 
     this.canvas.addEventListener('mousedown', this.addMouseMoveEvent)
     this.canvas.addEventListener('mouseup', this.removeMouseMoveEvent)
@@ -27,6 +32,10 @@ class Canvas extends Component {
       e.preventDefault()
     })
   }
+
+  setMode = mode => () => (
+    this.setState({ drawingMode: mode })
+  )
 
   addMouseMoveEvent = () => {
     this.canvas.addEventListener('mousemove', this.mouseMove)
@@ -51,28 +60,87 @@ class Canvas extends Component {
   }
 
   draw = (x, y) => {
-    const { context, prevX, prevY } = this
+    const { drawingMode } = this.state
+    const { canvas, prevX, prevY } = this
+
+    const context = canvas.getContext('2d')
+    const colour = drawingMode === 'rainbow' ? sample(COLOURS) : 'black'
+    const composition = drawingMode === 'eraser' ? 'destination-out' : 'source-over'
+    const size = drawingMode === 'eraser' ? SIZES.eraser : SIZES.pen
 
     if (prevX && prevY) {
       context.beginPath()
       context.moveTo(prevX, prevY)
       context.lineTo(x, y)
-      context.lineWidth = 6
+      context.lineWidth = size
       context.lineJoin = 'round'
-      context.strokeStyle = sample(colours)
+      context.strokeStyle = colour
+      context.globalCompositeOperation = composition
       context.stroke()
-      context.closePath()
     }
 
     this.prevX = x
     this.prevY = y
   }
 
+  clear = () => {
+    const { canvas } = this
+    const context = canvas.getContext('2d')
+
+    context.clearRect(0, 0, canvas.width, canvas.height)
+  }
+
+  download = () => {
+    const image = this.canvas.toDataURL('image/png', 1).replace('image/png', 'image/octet-stream')
+
+    const link = global.document.createElement('a')
+    link.download = 'onweek-submission.png'
+    link.href = image
+    link.click()
+  }
+
   render() {
+    const { drawingMode } = this.state
+
     return (
       <div className={styles.wrapper}>
-        <p>Feeling bored? <span className={styles.coloured}>Draw</span> something below:</p>
+        <p>Fancy a little competition?</p>
+        <p className={styles.heading}>
+          <span className={styles.coloured}>Draw </span>
+          something below on the canvas then follow the submission instructions underneath!
+        </p>
+
+        <div className={styles.buttons}>
+          {MODES.map(mode => (
+            <button
+              key={mode}
+              type="button"
+              onClick={this.setMode(mode)}
+              className={drawingMode === mode ? styles[`${drawingMode}-active`] : styles.button}
+            >
+              {mode}
+            </button>
+          ))}
+          <button className={styles.button} type="button" onClick={this.clear}>clear</button>
+        </div>
+
         <canvas className={styles.canvas} ref={(el) => { this.canvas = el }} />
+
+        <p>Submission instructions:</p>
+        <p className={styles.text}>
+          Think you&apos;ve got a winner? Click the download button below and it will do exactly what you think...
+        </p>
+
+        <button type="button" onClick={this.download} className={styles.download}>
+          Download art
+        </button>
+
+        <p className={styles.text}>
+          Now send the image to <strong>@james.formica</strong> on slack
+          and we will all vote on them later on!
+        </p>
+
+        <span aria-label="sunglasses" role="img">😎</span>
       </div>
     )
   }

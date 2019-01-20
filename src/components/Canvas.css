@@ -1,3 +1,7 @@
+:root {
+  --border: 1px solid black;
+}
+
 .wrapper {
   color: #333f48;
   margin-top: 8rem;
@@ -5,14 +9,75 @@
   font-weight: bold;
 }
 
+.text {
+  font-size: 0.875rem;
+  font-weight: normal;
+}
+
+.heading {
+  composes: text;
+  margin-bottom: 1.75rem;
+}
+
 .canvas {
   width: 100%;
-  height: 100vh;
-  border: 4px solid #333f48;
-  border-radius: 0.75rem;
+  height: 80vh;
+  border: var(--border);
+  border-top: 0;
   cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  background: #f7f8f9;
+  border: var(--border);
+  border-bottom: 0;
+}
+
+.button {
+  color: black;
+  font-size: 0.875rem;
+  background: transparent;
+  padding: 0.5rem 1rem;
+  margin-top: 0px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+
+  &:last-child {
+    margin-left: auto;
+  }
+}
+
+.activeButton {
+  composes: button;
+  color: white;
+  background-repeat: no-repeat;
+}
+
+.rainbow-active {
+  composes: activeButton;
+  background-image: linear-gradient(45deg, aquamarine, aqua, skyblue, pink, coral, magenta);
+}
+
+.black-active {
+  composes: activeButton;
+  background-color: black;
+}
+
+.eraser-active {
+  composes: activeButton;
+  background-image: linear-gradient(90deg, darkturquoise 50%, salmon 50%, salmon);
 }
 
 .coloured {
   color: #e4002b;
+}
+
+.download {
+  background: #e4002b;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: 3px;
 }
