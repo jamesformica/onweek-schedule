@@ -31916,11 +31916,21 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "wrapper": "_wrapper_el2p2_1",
-  "canvas": "_canvas_el2p2_8",
-  "coloured": "_coloured_el2p2_16"
+  "wrapper": "_wrapper_93lel_5",
+  "text": "_text_93lel_12",
+  "heading": "_heading_93lel_17 _text_93lel_12",
+  "canvas": "_canvas_93lel_22",
+  "buttons": "_buttons_93lel_30",
+  "button": "_button_93lel_30",
+  "activeButton": "_activeButton_93lel_52 _button_93lel_30",
+  "rainbow-active": "_rainbow-active_93lel_58 _activeButton_93lel_52 _button_93lel_30",
+  "black-active": "_black-active_93lel_63 _activeButton_93lel_52 _button_93lel_30",
+  "eraser-active": "_eraser-active_93lel_68 _activeButton_93lel_52 _button_93lel_30",
+  "coloured": "_coloured_93lel_73",
+  "download": "_download_93lel_77"
 };
 },{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Canvas.js":[function(require,module,exports) {
+var global = arguments[3];
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31956,7 +31966,12 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-var colours = ['aqua', 'pink', 'magenta', 'aquamarine', 'coral', 'blueviolet', 'skyblue'];
+var MODES = ['black', 'rainbow', 'eraser'];
+var COLOURS = ['aqua', 'pink', 'magenta', 'aquamarine', 'coral', 'blueviolet', 'skyblue'];
+var SIZES = {
+  pen: 4,
+  eraser: 8
+};
 
 var Canvas =
 /*#__PURE__*/
@@ -31975,6 +31990,17 @@ function (_Component) {
     }
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Canvas)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this.state = {
+      drawingMode: MODES[0]
+    };
+
+    _this.setMode = function (mode) {
+      return function () {
+        return _this.setState({
+          drawingMode: mode
+        });
+      };
+    };
 
     _this.addMouseMoveEvent = function () {
       _this.canvas.addEventListener('mousemove', _this.mouseMove);
@@ -32010,24 +32036,48 @@ function (_Component) {
     };
 
     _this.draw = function (x, y) {
+      var drawingMode = _this.state.drawingMode;
+
       var _assertThisInitialize = _assertThisInitialized(_assertThisInitialized(_this)),
-          context = _assertThisInitialize.context,
+          canvas = _assertThisInitialize.canvas,
           prevX = _assertThisInitialize.prevX,
           prevY = _assertThisInitialize.prevY;
+
+      var context = canvas.getContext('2d');
+      var colour = drawingMode === 'rainbow' ? (0, _sample.default)(COLOURS) : 'black';
+      var composition = drawingMode === 'eraser' ? 'destination-out' : 'source-over';
+      var size = drawingMode === 'eraser' ? SIZES.eraser : SIZES.pen;
 
       if (prevX && prevY) {
         context.beginPath();
         context.moveTo(prevX, prevY);
         context.lineTo(x, y);
-        context.lineWidth = 6;
+        context.lineWidth = size;
         context.lineJoin = 'round';
-        context.strokeStyle = (0, _sample.default)(colours);
+        context.strokeStyle = colour;
+        context.globalCompositeOperation = composition;
         context.stroke();
-        context.closePath();
       }
 
       _this.prevX = x;
       _this.prevY = y;
+    };
+
+    _this.clear = function () {
+      var _assertThisInitialize2 = _assertThisInitialized(_assertThisInitialized(_this)),
+          canvas = _assertThisInitialize2.canvas;
+
+      var context = canvas.getContext('2d');
+      context.clearRect(0, 0, canvas.width, canvas.height);
+    };
+
+    _this.download = function () {
+      var image = _this.canvas.toDataURL('image/png', 1).replace('image/png', 'image/octet-stream');
+
+      var link = global.document.createElement('a');
+      link.download = 'onweek-submission.png';
+      link.href = image;
+      link.click();
     };
 
     return _this;
@@ -32044,7 +32094,6 @@ function (_Component) {
 
       this.canvas.width = width;
       this.canvas.height = height;
-      this.context = this.canvas.getContext('2d');
       this.canvas.addEventListener('mousedown', this.addMouseMoveEvent);
       this.canvas.addEventListener('mouseup', this.removeMouseMoveEvent);
       this.canvas.addEventListener('touchstart', function (e) {
@@ -32065,16 +32114,43 @@ function (_Component) {
     value: function render() {
       var _this3 = this;
 
+      var drawingMode = this.state.drawingMode;
       return _react.default.createElement("div", {
         className: _Canvas.default.wrapper
-      }, _react.default.createElement("p", null, "Feeling bored? ", _react.default.createElement("span", {
+      }, _react.default.createElement("p", null, "Fancy a little competition?"), _react.default.createElement("p", {
+        className: _Canvas.default.heading
+      }, _react.default.createElement("span", {
         className: _Canvas.default.coloured
-      }, "Draw"), " something below:"), _react.default.createElement("canvas", {
+      }, "Draw "), "something below on the canvas then follow the submission instructions underneath!"), _react.default.createElement("div", {
+        className: _Canvas.default.buttons
+      }, MODES.map(function (mode) {
+        return _react.default.createElement("button", {
+          key: mode,
+          type: "button",
+          onClick: _this3.setMode(mode),
+          className: drawingMode === mode ? _Canvas.default["".concat(drawingMode, "-active")] : _Canvas.default.button
+        }, mode);
+      }), _react.default.createElement("button", {
+        className: _Canvas.default.button,
+        type: "button",
+        onClick: this.clear
+      }, "clear")), _react.default.createElement("canvas", {
         className: _Canvas.default.canvas,
         ref: function ref(el) {
           _this3.canvas = el;
         }
-      }));
+      }), _react.default.createElement("p", null, "Submission instructions:"), _react.default.createElement("p", {
+        className: _Canvas.default.text
+      }, "Think you've got a winner? Click the download button below and it will do exactly what you think..."), _react.default.createElement("button", {
+        type: "button",
+        onClick: this.download,
+        className: _Canvas.default.download
+      }, "Download art"), _react.default.createElement("p", {
+        className: _Canvas.default.text
+      }, "Now send the image to ", _react.default.createElement("strong", null, "@james.formica"), " on slack and we will all vote on them later on!"), _react.default.createElement("span", {
+        "aria-label": "sunglasses",
+        role: "img"
+      }, "\uD83D\uDE0E"));
     }
   }]);
 
@@ -40241,7 +40317,7 @@ var Footer = function Footer() {
     "aria-label": "footer",
     role: "img",
     className: _Footer.default.text
-  }, "Made by James Formica in literally an afternoon \uD83D\uDC9C"));
+  }, "Made by James Formica in a couple afternoons \uD83D\uDC9C"));
 };
 
 var _default = Footer;
@@ -40568,7 +40644,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64315" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63037" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

@@ -1,20 +1,80 @@
-._wrapper_el2p2_1 {
+:root {
+  --border: 1px solid black;
+}
+
+._wrapper_93lel_5 {
   color: #333f48;
   margin-top: 8rem;
   padding-bottom: 8rem;
   font-weight: bold;
 }
 
-._canvas_el2p2_8 {
+._text_93lel_12 {
+  font-size: 0.875rem;
+  font-weight: normal;
+}
+
+._heading_93lel_17 {
+  margin-bottom: 1.75rem;
+}
+
+._canvas_93lel_22 {
   width: 100%;
-  height: 100vh;
-  border: 4px solid #333f48;
-  border-radius: 0.75rem;
+  height: 80vh;
+  border: var(--border);
+  border-top: 0;
   cursor: pointer;
 }
 
-._coloured_el2p2_16 {
+._buttons_93lel_30 {
+  display: flex;
+  background: #f7f8f9;
+  border: var(--border);
+  border-bottom: 0;
+}
+
+._button_93lel_30 {
+  color: black;
+  font-size: 0.875rem;
+  background: transparent;
+  padding: 0.5rem 1rem;
+  margin-top: 0px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+._button_93lel_30:last-child {
+    margin-left: auto;
+  }
+
+._activeButton_93lel_52 {
+  color: white;
+  background-repeat: no-repeat;
+}
+
+._rainbow-active_93lel_58 {
+  background-image: linear-gradient(45deg, aquamarine, aqua, skyblue, pink, coral, magenta);
+}
+
+._black-active_93lel_63 {
+  background-color: black;
+}
+
+._eraser-active_93lel_68 {
+  background-image: linear-gradient(90deg, darkturquoise 50%, salmon 50%, salmon);
+}
+
+._coloured_93lel_73 {
   color: #e4002b;
+}
+
+._download_93lel_77 {
+  background: #e4002b;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: 3px;
 }._container_k9bkr_1 {
   position: relative;
   width: 90vw;
