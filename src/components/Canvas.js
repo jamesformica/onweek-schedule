@@ -128,7 +128,8 @@ class Canvas extends Component {
 
         <p>Submission instructions:</p>
         <p className={styles.text}>
-          Think you&apos;ve got a winner? Click the download button below and it will do exactly what you think...
+          Think you&apos;ve got a winner?
+          Click the download button below and it will do exactly what you think...
         </p>
 
         <button type="button" onClick={this.download} className={styles.download}>
