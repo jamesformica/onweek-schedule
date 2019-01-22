@@ -31916,18 +31916,18 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "wrapper": "_wrapper_93lel_5",
-  "text": "_text_93lel_12",
-  "heading": "_heading_93lel_17 _text_93lel_12",
-  "canvas": "_canvas_93lel_22",
-  "buttons": "_buttons_93lel_30",
-  "button": "_button_93lel_30",
-  "activeButton": "_activeButton_93lel_52 _button_93lel_30",
-  "rainbow-active": "_rainbow-active_93lel_58 _activeButton_93lel_52 _button_93lel_30",
-  "black-active": "_black-active_93lel_63 _activeButton_93lel_52 _button_93lel_30",
-  "eraser-active": "_eraser-active_93lel_68 _activeButton_93lel_52 _button_93lel_30",
-  "coloured": "_coloured_93lel_73",
-  "download": "_download_93lel_77"
+  "wrapper": "_wrapper_1uep5_5",
+  "text": "_text_1uep5_12",
+  "heading": "_heading_1uep5_17 _text_1uep5_12",
+  "canvas": "_canvas_1uep5_22",
+  "buttons": "_buttons_1uep5_30",
+  "button": "_button_1uep5_30",
+  "activeButton": "_activeButton_1uep5_52 _button_1uep5_30",
+  "rainbow-active": "_rainbow-active_1uep5_58 _activeButton_1uep5_52 _button_1uep5_30",
+  "black-active": "_black-active_1uep5_63 _activeButton_1uep5_52 _button_1uep5_30",
+  "eraser-active": "_eraser-active_1uep5_68 _activeButton_1uep5_52 _button_1uep5_30",
+  "coloured": "_coloured_1uep5_73",
+  "download": "_download_1uep5_83"
 };
 },{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Canvas.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -32080,6 +32080,25 @@ function (_Component) {
       link.click();
     };
 
+    _this.egg = function () {
+      var _assertThisInitialize3 = _assertThisInitialized(_assertThisInitialized(_this)),
+          canvas = _assertThisInitialize3.canvas;
+
+      var width = canvas.width,
+          height = canvas.height;
+      var context = canvas.getContext('2d');
+      var text = '"Who in the world am I? Ah, that\'s the great puzzle."';
+      context.save();
+      context.fillStyle = 'royalblue';
+      context.globalCompositeOperation = 'source-over';
+      context.font = '30px Helvetica';
+      context.textAlign = 'center';
+      context.fillText(text, width / 2, height / 2, width * 0.9);
+      context.font = 'italic 20px Helvetica';
+      context.fillText('Alice - Alice in Wonderland', width / 2, height / 2 + 40, width * 0.9);
+      context.restore();
+    };
+
     return _this;
   }
 
@@ -32119,9 +32138,11 @@ function (_Component) {
         className: _Canvas.default.wrapper
       }, _react.default.createElement("p", null, "Fancy a little competition?"), _react.default.createElement("p", {
         className: _Canvas.default.heading
-      }, _react.default.createElement("span", {
-        className: _Canvas.default.coloured
-      }, "Draw "), "something below on the canvas then follow the submission instructions underneath!"), _react.default.createElement("div", {
+      }, _react.default.createElement("button", {
+        type: "button",
+        className: _Canvas.default.coloured,
+        onClick: this.egg
+      }, "Draw\xA0"), "something below on the canvas then follow the submission instructions underneath!"), _react.default.createElement("div", {
         className: _Canvas.default.buttons
       }, MODES.map(function (mode) {
         return _react.default.createElement("button", {
@@ -39489,14 +39510,15 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "wrapper": "_wrapper_1e8y8_1",
-  "info": "_info_1e8y8_4",
-  "dot": "_dot_1e8y8_9",
-  "time": "_time_1e8y8_45",
-  "title": "_title_1e8y8_52",
-  "more": "_more_1e8y8_61"
+  "wrapper": "_wrapper_pq0zg_1",
+  "info": "_info_pq0zg_11",
+  "dot": "_dot_pq0zg_16",
+  "time": "_time_pq0zg_52",
+  "title": "_title_pq0zg_59",
+  "more": "_more_pq0zg_68"
 };
 },{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Session.js":[function(require,module,exports) {
+var global = arguments[3];
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39512,16 +39534,41 @@ var _Session = _interopRequireDefault(require("./Session.css"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Session = function Session(_ref) {
-  var session = _ref.session;
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+var showSecret = function showSecret(text) {
+  return function () {
+    return global.alert(text);
+  };
+};
+
+var Wrapper = function Wrapper(_ref) {
+  var hiddenText = _ref.hiddenText,
+      children = _ref.children,
+      rest = _objectWithoutProperties(_ref, ["hiddenText", "children"]);
+
+  return hiddenText ? _react.default.createElement("button", _extends({
+    type: "button",
+    onClick: showSecret(hiddenText)
+  }, rest), children) : _react.default.createElement("div", rest, children);
+};
+
+var Session = function Session(_ref2) {
+  var session = _ref2.session;
   var hostedBy = session.hostedBy,
       location = session.location,
-      moreInfo = session.moreInfo;
+      moreInfo = session.moreInfo,
+      hiddenText = session.hiddenText;
   var start = (0, _moment.default)(session.start, 'HH:mm');
   var end = (0, _moment.default)(session.end, 'HH:mm');
   var hosted = hostedBy ? " with ".concat(hostedBy) : '';
-  return _react.default.createElement("div", {
-    className: _Session.default.wrapper
+  return _react.default.createElement(Wrapper, {
+    className: _Session.default.wrapper,
+    hiddenText: hiddenText
   }, _react.default.createElement("div", {
     className: _Session.default.dot
   }), _react.default.createElement("div", {
@@ -39807,7 +39854,8 @@ module.exports = [{
     "start": "08:30",
     "end": "11:00",
     "title": "Mentors arrive",
-    "moreInfo": "😱 😱 😱 O.M.G"
+    "moreInfo": "😱 😱 😱 O.M.G",
+    "hiddenText": "Come find me and say the words \"Pink flamingo paradise\" and ill buy you your favourite chocolate bar / candy / sweet."
   }, {
     "start": "11:00",
     "end": "12:00",
@@ -39855,7 +39903,8 @@ module.exports = [{
     "start": "13:00",
     "end": "17:00",
     "title": "Porject time 2.0",
-    "moreInfo": "Only 4 hours left to work! Also, yes, I did spell project wrong on purpose, don't ask me why. Also, the lady on the train next to me is talking really loudly on the phone and it is super distracting. Some people. OMG apparently she saw a dead body at Woolworths... What is wrong with some people?!"
+    "moreInfo": "Only 4 hours left to work! Also, yes, I did spell project wrong on purpose, don't ask me why. Also, the lady on the train next to me is talking really loudly on the phone and it is super distracting. Some people. OMG apparently she saw a dead body at Woolworths... What is wrong with some people?!",
+    "hiddenText": "Come find me and say the words \"Pink flamingo paradise\" and ill buy you your favourite chocolate bar / candy / sweet."
   }, {
     "start": "17:00",
     "end": "18:00",
@@ -39947,7 +39996,8 @@ module.exports = [{
     "title": "Intro to engineering",
     "hostedBy": "Steve Truong",
     "location": "Hamer Hall",
-    "moreInfo": "There's nothing better than kicking off the day with a session on super high tech stuff and there is no one more qualified than Steve to deliver this session. Don't let his big muscles 💪 and nickname (Super Tank) alarm you, he is the sweetest guy in all of REA."
+    "moreInfo": "There's nothing better than kicking off the day with a session on super high tech stuff and there is no one more qualified than Steve to deliver this session. Don't let his big muscles 💪 and nickname (Super Tank) alarm you, he is the sweetest guy in all of REA.",
+    "hiddenText": "Come find me and say the words \"Pink flamingo paradise\" and ill buy you your favourite chocolate bar / candy / sweet."
   }, {
     "start": "10:30",
     "end": "10:45",
@@ -40086,7 +40136,8 @@ module.exports = [{
     "title": "Lunch and [top secret]",
     "hostedBy": "Mentors",
     "location": "Unknown",
-    "moreInfo": "Enjoy some lunch with your mentors, then embark on️ a top secret journey that has probably already been spoiled for you cause people are sometimes like that and don't like to let other people have any fun. 🤬"
+    "moreInfo": "Enjoy some lunch with your mentors, then embark on️ a top secret journey that has probably already been spoiled for you cause people are sometimes like that and don't like to let other people have any fun. 🤬",
+    "hiddenText": "Come find me and say the words \"Pink flamingo paradise\" and ill buy you your favourite chocolate bar / candy / sweet."
   }]
 }];
 },{}],"src/components/Content.css":[function(require,module,exports) {
@@ -40147,14 +40198,16 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "header": "_header_1ib94_1",
-  "bg": "_bg_1ib94_5 _header_1ib94_1",
-  "rea": "_rea_1ib94_17",
-  "text": "_text_1ib94_21",
-  "title": "_title_1ib94_33",
-  "subtitle": "_subtitle_1ib94_41"
+  "header": "_header_10moi_1",
+  "bg": "_bg_10moi_5 _header_10moi_1",
+  "rea": "_rea_10moi_17",
+  "text": "_text_10moi_21",
+  "title": "_title_10moi_36",
+  "subtitle": "_subtitle_10moi_44",
+  "flip": "_flip_10moi_52"
 };
 },{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Header.js":[function(require,module,exports) {
+var global = arguments[3];
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40179,6 +40232,10 @@ var backgroundStyles = {
   backgroundImage: "linear-gradient(".concat(overlay, ", ").concat(overlay, "), url('").concat(_grads.default, "')")
 };
 
+var flipIt = function flipIt() {
+  global.document.body.classList.toggle(_Header.default.flip);
+};
+
 var Header = function Header() {
   return _react.default.createElement("div", {
     className: _Header.default.header
@@ -40194,8 +40251,10 @@ var Header = function Header() {
     alt: "rea",
     src: _realogoWhite.default,
     className: _Header.default.rea
-  }), _react.default.createElement("div", {
-    className: _Header.default.text
+  }), _react.default.createElement("button", {
+    type: "button",
+    className: _Header.default.text,
+    onClick: flipIt
   }, _react.default.createElement("h1", {
     className: _Header.default.title
   }, "O", _react.default.createElement("small", null, "(n)"), "Week+"), _react.default.createElement("h2", {
@@ -40286,9 +40345,11 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "logoWrapper": "_logoWrapper_1h3az_1",
-  "logo": "_logo_1h3az_1",
-  "text": "_text_1h3az_20"
+  "logoWrapper": "_logoWrapper_2shph_1",
+  "button": "_button_2shph_12",
+  "vroom": "_vroom_2shph_1",
+  "logo": "_logo_2shph_1",
+  "text": "_text_2shph_31"
 };
 },{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Footer.js":[function(require,module,exports) {
 "use strict";
@@ -40309,15 +40370,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Footer = function Footer() {
   return _react.default.createElement("div", {
     className: _Footer.default.logoWrapper
+  }, _react.default.createElement("button", {
+    tabIndex: "0",
+    type: "button",
+    className: _Footer.default.button
   }, _react.default.createElement("img", {
     className: _Footer.default.logo,
     src: _gradLogo.default,
     alt: "Grad logo"
-  }), _react.default.createElement("span", {
+  })), _react.default.createElement("span", {
     "aria-label": "footer",
     role: "img",
     className: _Footer.default.text
-  }, "Made by James Formica in a couple afternoons \uD83D\uDC9C"));
+  }, "Made by James Formica in a couple afternoons \uD83D\uDC9C"), _react.default.createElement("small", null, _react.default.createElement("i", null, "p.s. there are a bunch of easter eggs on this page...")));
 };
 
 var _default = Footer;
@@ -40644,7 +40709,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63037" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56795" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
