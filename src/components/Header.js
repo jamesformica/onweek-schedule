@@ -11,6 +11,10 @@ const backgroundStyles = {
   backgroundImage: `linear-gradient(${overlay}, ${overlay}), url('${grads}')`,
 }
 
+const flipIt = () => {
+  global.document.body.classList.toggle(styles.flip)
+}
+
 const Header = () => (
   <div className={styles.header}>
     <div className={styles.bg} style={backgroundStyles} />
@@ -22,14 +26,14 @@ const Header = () => (
         className={styles.rea}
       />
 
-      <div className={styles.text}>
+      <button type="button" className={styles.text} onClick={flipIt}>
         <h1 className={styles.title}>
           O<small>(n)</small>Week+
         </h1>
         <h2 className={styles.subtitle}>
           4<sup>th</sup> - 15<sup>th</sup> February 2019
         </h2>
-      </div>
+      </button>
     </Container>
   </div>
 )

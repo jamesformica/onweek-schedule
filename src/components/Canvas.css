@@ -72,6 +72,12 @@
 
 .coloured {
   color: #e4002b;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-size: inherit;
 }
 
 .download {

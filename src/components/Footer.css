@@ -9,6 +9,17 @@
   text-align: center;
 }
 
+.button {
+  background: transparent;
+  border: 0;
+  outline: 0;
+  padding: 0;
+
+  &:focus {
+    animation: vroom 3s infinite ease-in-out;
+  }
+}
+
 .logo {
   height: 8rem;
 
@@ -20,4 +31,19 @@
 .text {
   display: inline-block;
   margin-top: 2rem;
+}
+
+@keyframes vroom {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1) translateZ(0);
+  }
+
+  50% {
+    transform: translate(100vw, -200%) scale(0) translateZ(0);
+  }
+
+  51% {
+    transform: translate(-100vw, 100%) scale(0) translateZ(0);
+  }
 }

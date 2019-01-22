@@ -99,6 +99,25 @@ class Canvas extends Component {
     link.click()
   }
 
+  egg = () => {
+    const { canvas } = this
+    const { width, height } = canvas
+
+    const context = canvas.getContext('2d')
+    const text = '"Who in the world am I? Ah, that\'s the great puzzle."'
+
+    context.save()
+    context.fillStyle = 'royalblue'
+    context.globalCompositeOperation = 'source-over'
+    context.font = '30px Helvetica'
+    context.textAlign = 'center'
+    context.fillText(text, width / 2, height / 2, width * 0.9)
+
+    context.font = 'italic 20px Helvetica'
+    context.fillText('Alice - Alice in Wonderland', width / 2, height / 2 + 40, width * 0.9)
+    context.restore()
+  }
+
   render() {
     const { drawingMode } = this.state
 
@@ -106,7 +125,7 @@ class Canvas extends Component {
       <div className={styles.wrapper}>
         <p>Fancy a little competition?</p>
         <p className={styles.heading}>
-          <span className={styles.coloured}>Draw </span>
+          <button type="button" className={styles.coloured} onClick={this.egg}>Draw&nbsp;</button>
           something below on the canvas then follow the submission instructions underneath!
         </p>
 

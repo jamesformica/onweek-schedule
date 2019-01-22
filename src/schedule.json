@@ -140,7 +140,8 @@
         "start": "08:30",
         "end": "11:00",
         "title": "Mentors arrive",
-        "moreInfo": "😱 😱 😱 O.M.G"
+        "moreInfo": "😱 😱 😱 O.M.G",
+        "hiddenText": "Come find me and say the words \"Pink flamingo paradise\" and ill buy you your favourite chocolate bar / candy / sweet."
       },
       {
         "start": "11:00",
@@ -199,7 +200,8 @@
         "start": "13:00",
         "end": "17:00",
         "title": "Porject time 2.0",
-        "moreInfo": "Only 4 hours left to work! Also, yes, I did spell project wrong on purpose, don't ask me why. Also, the lady on the train next to me is talking really loudly on the phone and it is super distracting. Some people. OMG apparently she saw a dead body at Woolworths... What is wrong with some people?!"
+        "moreInfo": "Only 4 hours left to work! Also, yes, I did spell project wrong on purpose, don't ask me why. Also, the lady on the train next to me is talking really loudly on the phone and it is super distracting. Some people. OMG apparently she saw a dead body at Woolworths... What is wrong with some people?!",
+        "hiddenText": "Come find me and say the words \"Pink flamingo paradise\" and ill buy you your favourite chocolate bar / candy / sweet."
       },
       {
         "start": "17:00",
@@ -311,7 +313,8 @@
         "title": "Intro to engineering",
         "hostedBy": "Steve Truong",
         "location": "Hamer Hall",
-        "moreInfo": "There's nothing better than kicking off the day with a session on super high tech stuff and there is no one more qualified than Steve to deliver this session. Don't let his big muscles 💪 and nickname (Super Tank) alarm you, he is the sweetest guy in all of REA."
+        "moreInfo": "There's nothing better than kicking off the day with a session on super high tech stuff and there is no one more qualified than Steve to deliver this session. Don't let his big muscles 💪 and nickname (Super Tank) alarm you, he is the sweetest guy in all of REA.",
+        "hiddenText": "Come find me and say the words \"Pink flamingo paradise\" and ill buy you your favourite chocolate bar / candy / sweet."
       },
       {
         "start": "10:30",
@@ -476,8 +479,9 @@
         "title": "Lunch and [top secret]",
         "hostedBy": "Mentors",
         "location": "Unknown",
-        "moreInfo": "Enjoy some lunch with your mentors, then embark on️ a top secret journey that has probably already been spoiled for you cause people are sometimes like that and don't like to let other people have any fun. 🤬"
-      },
+        "moreInfo": "Enjoy some lunch with your mentors, then embark on️ a top secret journey that has probably already been spoiled for you cause people are sometimes like that and don't like to let other people have any fun. 🤬",
+        "hiddenText": "Come find me and say the words \"Pink flamingo paradise\" and ill buy you your favourite chocolate bar / candy / sweet."
+      }
     ]
   }
 ]
