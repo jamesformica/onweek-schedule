@@ -39825,7 +39825,7 @@ module.exports = [{
     "start": "12:00",
     "end": "13:00",
     "title": "Lunch",
-    "moreInfo": "Lunch, lunch, lunch, lunch!"
+    "moreInfo": "Lunch, lunch, lunch, lunch! 🚶‍♂️🚶‍♂️🚶‍♂️"
   }, {
     "start": "13:00",
     "end": "16:30",
@@ -39912,9 +39912,15 @@ module.exports = [{
     "moreInfo": "With teary eyes we will slowly leave and head home. Fear not, we will see you again."
   }, {
     "start": "18:00",
+    "end": "19:00",
+    "title": "Tidy up",
+    "hostedBy": "everyone",
+    "moreInfo": "If the place looks like my bedroom when I was 13 then Greg is probably as disappointed as my parents... Time to clean!"
+  }, {
+    "start": "19:00",
     "end": "21:00",
-    "title": "Dinner (I assume)",
-    "moreInfo": "I can't see a card for dinner on the Trello board but I doubt they'd let you go to sleep hungry... I think."
+    "title": "Dinner",
+    "moreInfo": "Do you feel like pizza? 🍕 I feel like pizza! 🍕 How does pizza by the pool sound? Typical that they bring out the pizza AFTER the mentors leave... classic."
   }]
 }, {
   "day": "2019-02-08",
@@ -39981,12 +39987,19 @@ module.exports = [{
     "location": "Uni Hall",
     "moreInfo": "This man has more wisdon in his left thumb than I do in my entire body, so listen up and ask lots of questions!"
   }, {
-    "start": "14:00",
-    "end": "15:00",
-    "title": "Intro to REA and our LOBs",
-    "hostedBy": "Greg and Kate",
+    "start": "14:30",
+    "end": "15:30",
+    "title": "Impostor syndrome",
+    "hostedBy": "Simon Hope",
     "location": "Uni Hall",
-    "moreInfo": "Did you know REA is made up of different teams?!?! That's right! More specifically, at least 4 teams... I think."
+    "moreInfo": "Have you ever felt like you don't know what your doing and are just waiting for someone to call you out on it and expose you for the fraud you are? Don't worry, if Trump can make it to President, you can beat impostor syndrome!"
+  }, {
+    "start": "15:30",
+    "end": "16:00",
+    "title": "Track your learning",
+    "hostedBy": "Will Siebuhr",
+    "location": "Uni Hall",
+    "moreInfo": "Your time here at REA will be a journey of growth and learning. It's sometimes a good idea to track how far you've come so you can justify a 300% bonus at the end of financial year!"
   }]
 }, {
   "day": "2019-02-12",
@@ -40010,7 +40023,7 @@ module.exports = [{
     "title": "Intro to systems",
     "hostedBy": "Joh",
     "location": "Hamer Hall",
-    "moreInfo": "You've heard all about engineering, now it's time turn up the dial and learn about all the systems at REA, what's the difference? You're about to find out! And hopefully so am I..."
+    "moreInfo": "You've heard all about engineering, now it's time turn up the dial and learn about all the systems at REA, what's the difference? You're about to find out! In short, Slack will be your biggest distraction!"
   }, {
     "start": "12:00",
     "end": "13:30",
@@ -40032,8 +40045,8 @@ module.exports = [{
     "hostedBy": "your Rotation Lead",
     "moreInfo": "Thank goodness that compliance training is over! Now, go catch up with your rotation lead and have your very first one on one. Don't worry, it's not as scary as it sounds! Or is it..?"
   }, {
-    "start": "14:30",
-    "end": "15:30",
+    "start": "15:30",
+    "end": "16:30",
     "title": "Compliance training, again",
     "location": "Hamer Hall",
     "moreInfo": "Oh no, not again."
@@ -40066,6 +40079,12 @@ module.exports = [{
     "hostedBy": "Breana",
     "location": "Concert Hall",
     "moreInfo": "James, don't forget to write about this. Good work!"
+  }, {
+    "start": "15:00",
+    "end": "16:30",
+    "title": "CXP visit (max 5)",
+    "location": "down the road",
+    "moreInfo": "CXP are the backbone of REA, let's take a sneak peak at who they are and what they do."
   }]
 }, {
   "day": "2019-02-14",
@@ -40108,6 +40127,12 @@ module.exports = [{
     "hostedBy": "your 5.0 buddy",
     "location": "The Provincial",
     "moreInfo": "Woo we get to play with our computers now! Let your 5.0 buddy show you the ropes and help get your system set up and ready to smash out some work."
+  }, {
+    "start": "15:30",
+    "end": "16:30",
+    "title": "CXP visit (max 5)",
+    "location": "down the road",
+    "moreInfo": "Another visit to our trusty CXP team!"
   }]
 }, {
   "day": "2019-02-15",
@@ -40138,6 +40163,15 @@ module.exports = [{
     "location": "Unknown",
     "moreInfo": "Enjoy some lunch with your mentors, then embark on️ a top secret journey that has probably already been spoiled for you cause people are sometimes like that and don't like to let other people have any fun. 🤬",
     "hiddenText": "Come find me and say the words \"Pink flamingo paradise\" and ill buy you your favourite chocolate bar / candy / sweet."
+  }]
+}, {
+  "day": "2019-02-20",
+  "sessions": [{
+    "start": "16:00",
+    "end": "20:00",
+    "title": "Grad family night",
+    "hostedBy": "Kate, Greg, your buddies",
+    "moreInfo": "Whether you realise it yet or not, we are all part of a family here at REA. Multiple families actually. Tonight we are going to have some time with you 6.0 grad family."
   }]
 }];
 },{}],"src/components/Content.css":[function(require,module,exports) {
@@ -40709,7 +40743,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56795" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51011" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
