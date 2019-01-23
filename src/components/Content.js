@@ -4,6 +4,7 @@ import Canvas from './Canvas'
 import Container from './Container'
 import Day from './Day'
 import Heading from './Heading'
+import Map from './Map'
 import schedule from '../schedule.json'
 import styles from './Content.css'
 
@@ -14,6 +15,7 @@ const Content = () => (
       <Heading>Your schedule</Heading>
       {schedule.map(day => <Day key={day.day} day={day} />)}
 
+      <Map />
       <Canvas />
     </Container>
   </div>

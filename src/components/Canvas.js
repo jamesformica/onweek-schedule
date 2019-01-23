@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import sample from 'lodash/sample'
 
+import Heading from './Heading'
 import styles from './Canvas.css'
 
 const MODES = ['black', 'rainbow', 'eraser']
@@ -123,6 +124,8 @@ class Canvas extends Component {
 
     return (
       <div className={styles.wrapper}>
+        <Heading>Drawing zone</Heading>
+
         <p>Fancy a little competition?</p>
         <p className={styles.heading}>
           <button type="button" className={styles.coloured} onClick={this.egg}>Draw&nbsp;</button>
