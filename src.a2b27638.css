@@ -1,24 +1,29 @@
-:root {
+._heading_5r9l6_1 {
+  color: #333f48;
+  font-size: 2.25rem;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  margin: 0;
+}:root {
   --border: 1px solid black;
 }
 
-._wrapper_1uep5_5 {
+._wrapper_1acsc_5 {
   color: #333f48;
-  margin-top: 8rem;
   padding-bottom: 8rem;
   font-weight: bold;
 }
 
-._text_1uep5_12 {
+._text_1acsc_11 {
   font-size: 0.875rem;
   font-weight: normal;
 }
 
-._heading_1uep5_17 {
+._heading_1acsc_16 {
   margin-bottom: 1.75rem;
 }
 
-._canvas_1uep5_22 {
+._canvas_1acsc_21 {
   width: 100%;
   height: 80vh;
   border: var(--border);
@@ -26,14 +31,14 @@
   cursor: pointer;
 }
 
-._buttons_1uep5_30 {
+._buttons_1acsc_29 {
   display: flex;
   background: #f7f8f9;
   border: var(--border);
   border-bottom: 0;
 }
 
-._button_1uep5_30 {
+._button_1acsc_29 {
   color: black;
   font-size: 0.875rem;
   background: transparent;
@@ -44,28 +49,28 @@
   cursor: pointer;
 }
 
-._button_1uep5_30:last-child {
+._button_1acsc_29:last-child {
     margin-left: auto;
   }
 
-._activeButton_1uep5_52 {
+._activeButton_1acsc_51 {
   color: white;
   background-repeat: no-repeat;
 }
 
-._rainbow-active_1uep5_58 {
+._rainbow-active_1acsc_57 {
   background-image: linear-gradient(45deg, aquamarine, aqua, skyblue, pink, coral, magenta);
 }
 
-._black-active_1uep5_63 {
+._black-active_1acsc_62 {
   background-color: black;
 }
 
-._eraser-active_1uep5_68 {
+._eraser-active_1acsc_67 {
   background-image: linear-gradient(90deg, darkturquoise 50%, salmon 50%, salmon);
 }
 
-._coloured_1uep5_73 {
+._coloured_1acsc_72 {
   color: #e4002b;
   background: transparent;
   border: 0;
@@ -75,7 +80,7 @@
   font-size: inherit;
 }
 
-._download_1uep5_83 {
+._download_1acsc_82 {
   background: #e4002b;
   color: white;
   padding: 0.5rem 1rem;
@@ -188,12 +193,14 @@
 
 ._closed_1j0xp_29 {
   transform: rotate(90deg);
-}._heading_5r9l6_1 {
-  color: #333f48;
-  font-size: 2.25rem;
-  padding-top: 2rem;
-  padding-bottom: 1.5rem;
-  margin: 0;
+}._map_1couk_1 {
+  background: white;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+._ground_1couk_7 {
+  width: 100%;
 }._content_axnhd_1 {
   background: white;
 }

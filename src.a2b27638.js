@@ -31910,24 +31910,55 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/components/Canvas.css":[function(require,module,exports) {
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/components/Heading.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "wrapper": "_wrapper_1uep5_5",
-  "text": "_text_1uep5_12",
-  "heading": "_heading_1uep5_17 _text_1uep5_12",
-  "canvas": "_canvas_1uep5_22",
-  "buttons": "_buttons_1uep5_30",
-  "button": "_button_1uep5_30",
-  "activeButton": "_activeButton_1uep5_52 _button_1uep5_30",
-  "rainbow-active": "_rainbow-active_1uep5_58 _activeButton_1uep5_52 _button_1uep5_30",
-  "black-active": "_black-active_1uep5_63 _activeButton_1uep5_52 _button_1uep5_30",
-  "eraser-active": "_eraser-active_1uep5_68 _activeButton_1uep5_52 _button_1uep5_30",
-  "coloured": "_coloured_1uep5_73",
-  "download": "_download_1uep5_83"
+  "heading": "_heading_5r9l6_1"
+};
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Heading.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _Heading = _interopRequireDefault(require("./Heading.css"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Heading = function Heading(_ref) {
+  var children = _ref.children;
+  return _react.default.createElement("h2", {
+    className: _Heading.default.heading
+  }, children);
+};
+
+var _default = Heading;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","./Heading.css":"src/components/Heading.css"}],"src/components/Canvas.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+module.exports = {
+  "wrapper": "_wrapper_1acsc_5",
+  "text": "_text_1acsc_11",
+  "heading": "_heading_1acsc_16 _text_1acsc_11",
+  "canvas": "_canvas_1acsc_21",
+  "buttons": "_buttons_1acsc_29",
+  "button": "_button_1acsc_29",
+  "activeButton": "_activeButton_1acsc_51 _button_1acsc_29",
+  "rainbow-active": "_rainbow-active_1acsc_57 _activeButton_1acsc_51 _button_1acsc_29",
+  "black-active": "_black-active_1acsc_62 _activeButton_1acsc_51 _button_1acsc_29",
+  "eraser-active": "_eraser-active_1acsc_67 _activeButton_1acsc_51 _button_1acsc_29",
+  "coloured": "_coloured_1acsc_72",
+  "download": "_download_1acsc_82"
 };
 },{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Canvas.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -31941,6 +31972,8 @@ exports.default = void 0;
 var _react = _interopRequireWildcard(require("react"));
 
 var _sample = _interopRequireDefault(require("lodash/sample"));
+
+var _Heading = _interopRequireDefault(require("./Heading"));
 
 var _Canvas = _interopRequireDefault(require("./Canvas.css"));
 
@@ -32136,7 +32169,7 @@ function (_Component) {
       var drawingMode = this.state.drawingMode;
       return _react.default.createElement("div", {
         className: _Canvas.default.wrapper
-      }, _react.default.createElement("p", null, "Fancy a little competition?"), _react.default.createElement("p", {
+      }, _react.default.createElement(_Heading.default, null, "Drawing zone"), _react.default.createElement("p", null, "Fancy a little competition?"), _react.default.createElement("p", {
         className: _Canvas.default.heading
       }, _react.default.createElement("button", {
         type: "button",
@@ -32180,7 +32213,7 @@ function (_Component) {
 
 var _default = Canvas;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","lodash/sample":"node_modules/lodash/sample.js","./Canvas.css":"src/components/Canvas.css"}],"src/components/Container.css":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","lodash/sample":"node_modules/lodash/sample.js","./Heading":"src/components/Heading.js","./Canvas.css":"src/components/Canvas.css"}],"src/components/Container.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -39705,15 +39738,18 @@ function (_Component) {
 
 var _default = Day;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","moment":"node_modules/moment/moment.js","react-collapse":"node_modules/react-collapse/lib/index.js","./Session":"src/components/Session.js","../images/chevron.svg":"src/images/chevron.svg","./Day.css":"src/components/Day.css"}],"src/components/Heading.css":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","moment":"node_modules/moment/moment.js","react-collapse":"node_modules/react-collapse/lib/index.js","./Session":"src/components/Session.js","../images/chevron.svg":"src/images/chevron.svg","./Day.css":"src/components/Day.css"}],"src/images/ground-floor-map.png":[function(require,module,exports) {
+module.exports = "/ground-floor-map.a6993a2e.png";
+},{}],"src/components/Map.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "heading": "_heading_5r9l6_1"
+  "map": "_map_1couk_1",
+  "ground": "_ground_1couk_7"
 };
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Heading.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Map.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39723,20 +39759,29 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _Heading = _interopRequireDefault(require("./Heading.css"));
+var _Container = _interopRequireDefault(require("./Container"));
+
+var _Heading = _interopRequireDefault(require("./Heading"));
+
+var _groundFloorMap = _interopRequireDefault(require("../images/ground-floor-map.png"));
+
+var _Map = _interopRequireDefault(require("./Map.css"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Heading = function Heading(_ref) {
-  var children = _ref.children;
-  return _react.default.createElement("h2", {
-    className: _Heading.default.heading
-  }, children);
+var Map = function Map() {
+  return _react.default.createElement("div", {
+    className: _Map.default.map
+  }, _react.default.createElement(_Container.default, null, _react.default.createElement(_Heading.default, null, "Ground floor map"), _react.default.createElement("img", {
+    src: _groundFloorMap.default,
+    className: _Map.default.ground,
+    alt: "ground floor map"
+  })));
 };
 
-var _default = Heading;
+var _default = Map;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./Heading.css":"src/components/Heading.css"}],"src/schedule.json":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Container":"src/components/Container.js","./Heading":"src/components/Heading.js","../images/ground-floor-map.png":"src/images/ground-floor-map.png","./Map.css":"src/components/Map.css"}],"src/schedule.json":[function(require,module,exports) {
 module.exports = [{
   "day": "2019-02-04",
   "sessions": [{
@@ -39750,13 +39795,13 @@ module.exports = [{
     "end": "10:00",
     "title": "Welcome to REA",
     "hostedBy": "Nigel Dalton",
-    "moreInfo": "I really don't have to write anything for this. You are all going to love this."
+    "moreInfo": "I really don't have to write anything for this. You are all going to love this. Everybody loves Nigel!"
   }, {
     "start": "10:15",
     "end": "10:40",
     "title": "Careers at REA",
     "hostedBy": "Manisha",
-    "moreInfo": "?"
+    "moreInfo": "Careers at REA come in all different shapes and sizes. And sometimes your career goes in directions that you had never even thought about. Manisha is going to tell you such a story about how she ended up with a side hustle in the Voodoo doll trade. No that's a lie, I just made that up."
   }, {
     "start": "10:40",
     "end": "11:15",
@@ -39768,7 +39813,7 @@ module.exports = [{
     "end": "11:45",
     "title": "Grad program experience",
     "hostedBy": "Ash",
-    "moreInfo": "It might be hard to know what exactly to expect from the grad program, instead of wondering, how about we let an ex grad tell you all about their experience."
+    "moreInfo": "It might be hard to know what exactly to expect from the grad program, instead of wondering about it over sleepless nights and 3 hour long showers, how about we let an ex grad tell you all about their experience."
   }, {
     "start": "11:45",
     "end": "12:30",
@@ -39789,18 +39834,19 @@ module.exports = [{
     "start": "15:30",
     "end": "16:30",
     "title": "Social contract",
-    "hostedBy": "Ash"
+    "hostedBy": "Ash",
+    "moreInfo": "Just a simple contract really, sign here, here, here, over here, initial here, here, here, oh sign this with blood, annnnnnd finally here! Done!"
   }, {
     "start": "16:30",
     "end": "17:00",
     "title": "Beach 🏖",
-    "moreInfo": "We think you deserve a break, let's head to the beach and enjoy the evening. Unless it's raining, that would suck."
+    "moreInfo": "We think you deserve a break, let's head to the beach and enjoy the evening. Unless it's raining, that would suck. Haha it's called Cowes beach, someone can't spell Cow 🐮"
   }, {
     "start": "18:00",
     "end": "21:00",
     "title": "Dinner / free time / activities",
     "hostedBy": "everyone",
-    "moreInfo": "Yep 👍"
+    "moreInfo": "Oh dear I hope they don't get you to do one of those 'Say your name and a fun fact about yourself..' kind of things. What is a fun fact? Hi I'm James and I like wearing socks 🧦! Is that fun? Who knows."
   }]
 }, {
   "day": "2019-02-05",
@@ -39808,7 +39854,7 @@ module.exports = [{
     "start": "06:00",
     "end": "08:30",
     "title": "Breakie time",
-    "moreInfo": "You've got a big day ahead of you, and you know what they say: breakfast is the most important meal of the day!"
+    "moreInfo": "You've got a big day ahead of you, and you know what they say: breakfast is the most important meal of the day! But it's not true, every meal is equally important cause they all contain food."
   }, {
     "start": "09:00",
     "end": "10:00",
@@ -39880,7 +39926,7 @@ module.exports = [{
     "start": "18:30",
     "end": "21:00",
     "title": "BBQ dinner",
-    "moreInfo": "Yassssssss BBQ."
+    "moreInfo": "Yassssssss BBQ. Little known fact: BBQ actually stands for Baked Baby Quiches..."
   }]
 }, {
   "day": "2019-02-07",
@@ -39920,7 +39966,7 @@ module.exports = [{
     "start": "19:00",
     "end": "21:00",
     "title": "Dinner",
-    "moreInfo": "Do you feel like pizza? 🍕 I feel like pizza! 🍕 How does pizza by the pool sound? Typical that they bring out the pizza AFTER the mentors leave... classic."
+    "moreInfo": "Do you feel like pizza? 🍕 I feel like pizza! 🍕 How does pizza by the pool sound? Typical that they bring out the pizza AFTER the mentors leave... classic Greg."
   }]
 }, {
   "day": "2019-02-08",
@@ -39987,6 +40033,11 @@ module.exports = [{
     "location": "Uni Hall",
     "moreInfo": "This man has more wisdon in his left thumb than I do in my entire body, so listen up and ask lots of questions!"
   }, {
+    "start": "14:00",
+    "end": "14:30",
+    "title": "Break",
+    "moreInfo": "Take a moment to gather your thoughts, to unwind, to reset your brain. Or use this time for that bathroom break you've been dying for... either way."
+  }, {
     "start": "14:30",
     "end": "15:30",
     "title": "Impostor syndrome",
@@ -39999,7 +40050,7 @@ module.exports = [{
     "title": "Track your learning",
     "hostedBy": "Will Siebuhr",
     "location": "Uni Hall",
-    "moreInfo": "Your time here at REA will be a journey of growth and learning. It's sometimes a good idea to track how far you've come so you can justify a 300% bonus at the end of financial year!"
+    "moreInfo": "Your time here at REA will be a journey of growth and learning. It's sometimes a good idea to track how far you've come so you can justify a 300% bonus at the end of financial year! Also, can someone ask Will how to pronounce his last name?"
   }]
 }, {
   "day": "2019-02-12",
@@ -40033,23 +40084,23 @@ module.exports = [{
     "moreInfo": "Did someone say lunch? 🌭🌯🍪🍩🍟🍔🍕🥓🍖🥐"
   }, {
     "start": "13:30",
-    "end": "14:30",
+    "end": "14:00",
     "title": "Compliance training",
     "hostedBy": "Greg",
     "location": "Hamer Hall",
     "moreInfo": "This is ummm going to ummm be ummm really really fun! Yep!"
   }, {
-    "start": "14:30",
-    "end": "15:30",
+    "start": "14:00",
+    "end": "15:00",
     "title": "Coffee & first 1:1",
     "hostedBy": "your Rotation Lead",
     "moreInfo": "Thank goodness that compliance training is over! Now, go catch up with your rotation lead and have your very first one on one. Don't worry, it's not as scary as it sounds! Or is it..?"
   }, {
-    "start": "15:30",
+    "start": "15:00",
     "end": "16:30",
-    "title": "Compliance training, again",
-    "location": "Hamer Hall",
-    "moreInfo": "Oh no, not again."
+    "title": "CXP visit / Compliance training, again",
+    "location": "Down the road / Hamer Hall",
+    "moreInfo": "Everyone is going to visit CXP but we can only take 5 people at a time because they are easily frightened. You'll all get to go over the next couple of days, just remember, don't make any sudden moves when you visit."
   }]
 }, {
   "day": "2019-02-13",
@@ -40062,9 +40113,16 @@ module.exports = [{
     "moreInfo": "Working together is one of the most important aspects of working at REA! Pairing together on a card is a fantastic way to get up to speed and also share knowledge across the team! We are all about pairing 🍐"
   }, {
     "start": "10:30",
-    "end": "12:00",
-    "title": "Morning tea / snacks / free time",
+    "end": "11:00",
+    "title": "Morning tea / snacks",
     "moreInfo": "More snackssssss, remember to say thanks to Greg for persuading REA to give him budget for snackssss."
+  }, {
+    "start": "11:00",
+    "end": "12:00",
+    "title": "System setup",
+    "hostedBy": "your Buddies",
+    "location": "Hub",
+    "moreInfo": "Ok don't worry about all those fancy IDEs and whatnot. Just learn how to install that Chrome extension that turns every picutre into Nicholas Cage, trust me on this."
   }, {
     "start": "12:00",
     "end": "13:00",
@@ -40078,11 +40136,11 @@ module.exports = [{
     "title": "Resilience / Self Development",
     "hostedBy": "Breana",
     "location": "Concert Hall",
-    "moreInfo": "James, don't forget to write about this. Good work!"
+    "moreInfo": "James, don't forget to write about this. Good work!   Dammit!"
   }, {
     "start": "15:00",
     "end": "16:30",
-    "title": "CXP visit (max 5)",
+    "title": "CXP visit",
     "location": "down the road",
     "moreInfo": "CXP are the backbone of REA, let's take a sneak peak at who they are and what they do."
   }]
@@ -40107,32 +40165,30 @@ module.exports = [{
     "hostedBy": "Theresa",
     "moreInfo": "We don't just ship things willy nilly at REA. Before they go out they have to pass QA. Sometimes teams have a dedicated QA, sometimes the team IS the QA. Regardless, it is an important skill to learn."
   }, {
+    "start": "11:15",
+    "end": "12:00",
+    "title": "Break time",
+    "moreInfo": "Breathe in and hold. One. Two. Three. And breathe out. One. Two. Three. Repeat this until you are nice and relaxed, you're welcome!"
+  }, {
     "start": "12:00",
-    "end": "13:30",
+    "end": "13:00",
     "title": "Lunch",
     "hostedBy": "6.0 cohort",
     "location": "maybe the park?",
     "moreInfo": "BYO lunch this time! Maybe bring some giant jenga along with you and have a chill out session with your 6.0 family."
   }, {
-    "start": "13:30",
+    "start": "13:00",
     "end": "14:30",
-    "title": "Intro to P&C",
-    "hostedBy": "Kate",
-    "location": "The Provincial",
-    "moreInfo": "The lovely team of People and Culture is here to help. Kate is going to walk you through who they are and what they can do for you!"
-  }, {
-    "start": "14:30",
-    "end": "15:30",
-    "title": "System set up",
-    "hostedBy": "your 5.0 buddy",
-    "location": "The Provincial",
-    "moreInfo": "Woo we get to play with our computers now! Let your 5.0 buddy show you the ropes and help get your system set up and ready to smash out some work."
-  }, {
-    "start": "15:30",
-    "end": "16:30",
-    "title": "CXP visit (max 5)",
+    "title": "CXP visit",
     "location": "down the road",
     "moreInfo": "Another visit to our trusty CXP team!"
+  }, {
+    "start": "14:30",
+    "end": "16:00",
+    "title": "Intro to P&C",
+    "hostedBy": "Kate",
+    "location": "GPO",
+    "moreInfo": "The lovely team of People and Culture is here to help. Kate is going to walk you through who they are and what they can do for you!"
   }]
 }, {
   "day": "2019-02-15",
@@ -40151,7 +40207,7 @@ module.exports = [{
   }, {
     "start": "11:00",
     "end": "12:00",
-    "title": "Benefits bingo",
+    "title": "Benefits Jeopardy",
     "hostedBy": "Caleb",
     "location": "Concert Hall",
     "moreInfo": "Did you know there are other benefits than being paid once a month at REA? It's true! Enjoy this gameshow style session where you'll learn about all the perks offered to you as an employee."
@@ -40201,6 +40257,8 @@ var _Day = _interopRequireDefault(require("./Day"));
 
 var _Heading = _interopRequireDefault(require("./Heading"));
 
+var _Map = _interopRequireDefault(require("./Map"));
+
 var _schedule = _interopRequireDefault(require("../schedule.json"));
 
 var _Content = _interopRequireDefault(require("./Content.css"));
@@ -40217,12 +40275,12 @@ var Content = function Content() {
       key: day.day,
       day: day
     });
-  }), _react.default.createElement(_Canvas.default, null)));
+  }), _react.default.createElement(_Map.default, null), _react.default.createElement(_Canvas.default, null)));
 };
 
 var _default = Content;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./Canvas":"src/components/Canvas.js","./Container":"src/components/Container.js","./Day":"src/components/Day.js","./Heading":"src/components/Heading.js","../schedule.json":"src/schedule.json","./Content.css":"src/components/Content.css"}],"src/images/grads.jpg":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Canvas":"src/components/Canvas.js","./Container":"src/components/Container.js","./Day":"src/components/Day.js","./Heading":"src/components/Heading.js","./Map":"src/components/Map.js","../schedule.json":"src/schedule.json","./Content.css":"src/components/Content.css"}],"src/images/grads.jpg":[function(require,module,exports) {
 module.exports = "/grads.a4eeeb69.jpg";
 },{}],"src/images/realogo-white.svg":[function(require,module,exports) {
 module.exports = "/realogo-white.75dc7109.svg";
@@ -40743,7 +40801,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51011" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57666" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
