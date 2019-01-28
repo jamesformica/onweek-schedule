@@ -14,14 +14,14 @@
         "end": "10:00",
         "title": "Welcome to REA",
         "hostedBy": "Nigel Dalton",
-        "moreInfo": "I really don't have to write anything for this. You are all going to love this."
+        "moreInfo": "I really don't have to write anything for this. You are all going to love this. Everybody loves Nigel!"
       },
       {
         "start": "10:15",
         "end": "10:40",
         "title": "Careers at REA",
         "hostedBy": "Manisha",
-        "moreInfo": "?"
+        "moreInfo": "Careers at REA come in all different shapes and sizes. And sometimes your career goes in directions that you had never even thought about. Manisha is going to tell you such a story about how she ended up with a side hustle in the Voodoo doll trade. No that's a lie, I just made that up."
       },
       {
         "start": "10:40",
@@ -35,7 +35,7 @@
         "end": "11:45",
         "title": "Grad program experience",
         "hostedBy": "Ash",
-        "moreInfo": "It might be hard to know what exactly to expect from the grad program, instead of wondering, how about we let an ex grad tell you all about their experience."
+        "moreInfo": "It might be hard to know what exactly to expect from the grad program, instead of wondering about it over sleepless nights and 3 hour long showers, how about we let an ex grad tell you all about their experience."
       },
       {
         "start": "11:45",
@@ -60,20 +60,21 @@
         "start": "15:30",
         "end": "16:30",
         "title": "Social contract",
-        "hostedBy": "Ash"
+        "hostedBy": "Ash",
+        "moreInfo": "Just a simple contract really, sign here, here, here, over here, initial here, here, here, oh sign this with blood, annnnnnd finally here! Done!"
       },
       {
         "start": "16:30",
         "end": "17:00",
         "title": "Beach 🏖",
-        "moreInfo": "We think you deserve a break, let's head to the beach and enjoy the evening. Unless it's raining, that would suck."
+        "moreInfo": "We think you deserve a break, let's head to the beach and enjoy the evening. Unless it's raining, that would suck. Haha it's called Cowes beach, someone can't spell Cow 🐮"
       },
       {
         "start": "18:00",
         "end": "21:00",
         "title": "Dinner / free time / activities",
         "hostedBy": "everyone",
-        "moreInfo": "Yep 👍"
+        "moreInfo": "Oh dear I hope they don't get you to do one of those 'Say your name and a fun fact about yourself..' kind of things. What is a fun fact? Hi I'm James and I like wearing socks 🧦! Is that fun? Who knows."
       }
     ]
   },
@@ -84,7 +85,7 @@
         "start": "06:00",
         "end": "08:30",
         "title": "Breakie time",
-        "moreInfo": "You've got a big day ahead of you, and you know what they say: breakfast is the most important meal of the day!"
+        "moreInfo": "You've got a big day ahead of you, and you know what they say: breakfast is the most important meal of the day! But it's not true, every meal is equally important cause they all contain food."
       },
       {
         "start": "09:00",
@@ -171,7 +172,7 @@
         "start": "18:30",
         "end": "21:00",
         "title": "BBQ dinner",
-        "moreInfo": "Yassssssss BBQ."
+        "moreInfo": "Yassssssss BBQ. Little known fact: BBQ actually stands for Baked Baby Quiches..."
       }
     ]
   },
@@ -220,7 +221,7 @@
         "start": "19:00",
         "end": "21:00",
         "title": "Dinner",
-        "moreInfo": "Do you feel like pizza? 🍕 I feel like pizza! 🍕 How does pizza by the pool sound? Typical that they bring out the pizza AFTER the mentors leave... classic."
+        "moreInfo": "Do you feel like pizza? 🍕 I feel like pizza! 🍕 How does pizza by the pool sound? Typical that they bring out the pizza AFTER the mentors leave... classic Greg."
       }
     ]
   },
@@ -302,6 +303,12 @@
         "moreInfo": "This man has more wisdon in his left thumb than I do in my entire body, so listen up and ask lots of questions!"
       },
       {
+        "start": "14:00",
+        "end": "14:30",
+        "title": "Break",
+        "moreInfo": "Take a moment to gather your thoughts, to unwind, to reset your brain. Or use this time for that bathroom break you've been dying for... either way."
+      },
+      {
         "start": "14:30",
         "end": "15:30",
         "title": "Impostor syndrome",
@@ -315,7 +322,7 @@
         "title": "Track your learning",
         "hostedBy": "Will Siebuhr",
         "location": "Uni Hall",
-        "moreInfo": "Your time here at REA will be a journey of growth and learning. It's sometimes a good idea to track how far you've come so you can justify a 300% bonus at the end of financial year!"
+        "moreInfo": "Your time here at REA will be a journey of growth and learning. It's sometimes a good idea to track how far you've come so you can justify a 300% bonus at the end of financial year! Also, can someone ask Will how to pronounce his last name?"
       }
     ]
   },
@@ -356,25 +363,25 @@
       },
       {
         "start": "13:30",
-        "end": "14:30",
+        "end": "14:00",
         "title": "Compliance training",
         "hostedBy": "Greg",
         "location": "Hamer Hall",
         "moreInfo": "This is ummm going to ummm be ummm really really fun! Yep!"
       },
       {
-        "start": "14:30",
-        "end": "15:30",
+        "start": "14:00",
+        "end": "15:00",
         "title": "Coffee & first 1:1",
         "hostedBy": "your Rotation Lead",
         "moreInfo": "Thank goodness that compliance training is over! Now, go catch up with your rotation lead and have your very first one on one. Don't worry, it's not as scary as it sounds! Or is it..?"
       },
       {
-        "start": "15:30",
+        "start": "15:00",
         "end": "16:30",
-        "title": "Compliance training, again",
-        "location": "Hamer Hall",
-        "moreInfo": "Oh no, not again."
+        "title": "CXP visit / Compliance training, again",
+        "location": "Down the road / Hamer Hall",
+        "moreInfo": "Everyone is going to visit CXP but we can only take 5 people at a time because they are easily frightened. You'll all get to go over the next couple of days, just remember, don't make any sudden moves when you visit."
       }
     ]
   },
@@ -391,9 +398,17 @@
       },
       {
         "start": "10:30",
-        "end": "12:00",
-        "title": "Morning tea / snacks / free time",
+        "end": "11:00",
+        "title": "Morning tea / snacks",
         "moreInfo": "More snackssssss, remember to say thanks to Greg for persuading REA to give him budget for snackssss."
+      },
+      {
+        "start": "11:00",
+        "end": "12:00",
+        "title": "System setup",
+        "hostedBy": "your Buddies",
+        "location": "Hub",
+        "moreInfo": "Ok don't worry about all those fancy IDEs and whatnot. Just learn how to install that Chrome extension that turns every picutre into Nicholas Cage, trust me on this."
       },
       {
         "start": "12:00",
@@ -409,12 +424,12 @@
         "title": "Resilience / Self Development",
         "hostedBy": "Breana",
         "location": "Concert Hall",
-        "moreInfo": "James, don't forget to write about this. Good work!"
+        "moreInfo": "James, don't forget to write about this. Good work!   Dammit!"
       },
       {
         "start": "15:00",
         "end": "16:30",
-        "title": "CXP visit (max 5)",
+        "title": "CXP visit",
         "location": "down the road",
         "moreInfo": "CXP are the backbone of REA, let's take a sneak peak at who they are and what they do."
       }
@@ -445,35 +460,33 @@
         "moreInfo": "We don't just ship things willy nilly at REA. Before they go out they have to pass QA. Sometimes teams have a dedicated QA, sometimes the team IS the QA. Regardless, it is an important skill to learn."
       },
       {
+        "start": "11:15",
+        "end": "12:00",
+        "title": "Break time",
+        "moreInfo": "Breathe in and hold. One. Two. Three. And breathe out. One. Two. Three. Repeat this until you are nice and relaxed, you're welcome!"
+      },
+      {
         "start": "12:00",
-        "end": "13:30",
+        "end": "13:00",
         "title": "Lunch",
         "hostedBy": "6.0 cohort",
         "location": "maybe the park?",
         "moreInfo": "BYO lunch this time! Maybe bring some giant jenga along with you and have a chill out session with your 6.0 family."
       },
       {
-        "start": "13:30",
+        "start": "13:00",
         "end": "14:30",
-        "title": "Intro to P&C",
-        "hostedBy": "Kate",
-        "location": "The Provincial",
-        "moreInfo": "The lovely team of People and Culture is here to help. Kate is going to walk you through who they are and what they can do for you!"
+        "title": "CXP visit",
+        "location": "down the road",
+        "moreInfo": "Another visit to our trusty CXP team!"
       },
       {
         "start": "14:30",
-        "end": "15:30",
-        "title": "System set up",
-        "hostedBy": "your 5.0 buddy",
-        "location": "The Provincial",
-        "moreInfo": "Woo we get to play with our computers now! Let your 5.0 buddy show you the ropes and help get your system set up and ready to smash out some work."
-      },
-      {
-        "start": "15:30",
-        "end": "16:30",
-        "title": "CXP visit (max 5)",
-        "location": "down the road",
-        "moreInfo": "Another visit to our trusty CXP team!"
+        "end": "16:00",
+        "title": "Intro to P&C",
+        "hostedBy": "Kate",
+        "location": "GPO",
+        "moreInfo": "The lovely team of People and Culture is here to help. Kate is going to walk you through who they are and what they can do for you!"
       }
     ]
   },
@@ -497,7 +510,7 @@
       {
         "start": "11:00",
         "end": "12:00",
-        "title": "Benefits bingo",
+        "title": "Benefits Jeopardy",
         "hostedBy": "Caleb",
         "location": "Concert Hall",
         "moreInfo": "Did you know there are other benefits than being paid once a month at REA? It's true! Enjoy this gameshow style session where you'll learn about all the perks offered to you as an employee."
